@@ -80,25 +80,46 @@
   </div>
   <div class="banner">
     <div class="main-content banner-content">
-      <div class="banner-content">
-        <h1 class="animate-on-load fade-in-up">FEEL NAUGHTY, <br/>STAY GROUNDED</h1>
-        <div class="center banner-center">
-          <p class="animate-on-load fade-in-up" style="animation-delay: 0.4s">Your caffeine-free ritual awaits</p>
-          <a href="/shop" data-w-id="864382fb-1d91-4d5a-2799-8b1e366efd15"
-            class="blue-button w-inline-block animate-on-load fade-in-up" style="animation-delay: 0.8s">
-            <div>SHOP NOW</div>
-            <div class="button-circle"></div>
-          </a>
+      <div class="banner-content" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+        <div class="banner-image" style="flex: 1; width: 250px;">
+          <img src="images/banner-donut.png" loading="lazy" alt="" class="banner-donut animate-on-load fade-in-right" style="animation-delay: 2.0s; width: 250px; height: auto;" />
         </div>
-        <img src="images/banner-coffe-bag.png" loading="lazy" alt="" 
-          sizes="(max-width: 750px) 80vw, 600px"
-          srcset="images/banner-coffe-bag.png 500w, images/banner-coffe-bag.png 600w" 
-          class="animate-on-load fade-in-up" style="animation-delay: 1.2s" />
+        <div class="banner-text" style="min-width: 300px; text-align: center;">
+          <h2 class="animate-on-load fade-in-up">FEEL NAUGHTY, <br/>STAY GROUNDED</h2>
+          <div class="center banner-center">
+            <p class="animate-on-load fade-in-up" style="animation-delay: 0.4s">Your caffeine-free ritual awaits</p>
+            <a href="/shop" data-w-id="864382fb-1d91-4d5a-2799-8b1e366efd15" class="blue-button w-inline-block animate-on-load fade-in-up" style="animation-delay: 0.8s">
+              <div>SHOP NOW</div>
+              <div class="button-circle"></div>
+            </a>
+          </div>
+        </div>
       </div>
+      <div class="banner-hero" style="width: 100%; text-align: center;">
+        <img src="images/banner-coffe-bag.png" loading="lazy" alt="" sizes="(max-width: 750px) 80vw, 600px" srcset="images/banner-coffe-bag.png 500w, images/banner-coffe-bag.png 600w" class="animate-on-load fade-in-up" style="animation-delay: 1.2s; " />
+      </div>
+
+      <style>
+        @media (max-width: 768px) {
+          .banner-content {
+            flex-direction: column;
+          }
+          .banner-image, .banner-text {
+            min-width: 100%;
+          }
+          .banner-image img {
+            width: 100%;
+            display:none;
+          }
+          .banner-hero img {
+            width: 100%;
+          }
+        }
+      </style>
       <img src="images/banner-cup.png" loading="lazy" alt="" 
         class="banner-coffee-cup animate-on-load fade-in-left" style="animation-delay: 1.6s" />
-      <img src="images/banner-donut.png" loading="lazy" alt="" 
-        class="banner-donut animate-on-load fade-in-right" style="animation-delay: 2.0s" />
+      <!--<img src="images/banner-donut.png" loading="lazy" alt="" 
+        class="banner-donut animate-on-load fade-in-right" style="animation-delay: 2.0s" />-->
       <img src="images/banner-coffee-beans-left.png"  alt="" 
         class="banner-coffee-beans-left animate-on-load fade-in-left" style="animation-delay: 2.4s" loading="lazy" />
       <img src="images/banner-coffee-beans-right.png" loading="lazy" alt="" 
@@ -421,42 +442,107 @@
   </div>
   <div id="testimonials" class="testimonials">
     <div class="main-content testimonials-content">
-      <div class="testimonails-wrapper">
-        <p class="blue-text">what customers say</p>
-        <h3 class="testimonials-heading margin-bottom-big">Why we’re different</h3>
-        <div data-delay="4000" data-animation="slide" class="testimonial-slider w-slider" data-autoplay="false"
-          data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
-          data-nav-spacing="3" data-duration="500" data-infinite="true">
-          <div class="w-slider-mask">
-            <div class="slide w-slide">
-              <p class="paragraph-big margin-bottom-small"><em>&quot;This coffee place has a cozy atmosphere and great
-                  coffee. The baristas are friendly and knowledgeable about their craft. Highly recommend their
-                  cappuccinos.&quot;</em></p>
-              <p class="author">Catherine Lipschwitz</p><img src="images/author-img.png" loading="lazy" alt=""
-                class="author-image" />
-              <p class="quote-number"><span class="active-quote">1/</span>  24</p>
-            </div>
-            <div class="slide w-slide">
-              <p class="paragraph-big margin-bottom-small"><em>&quot;This coffee place has a cozy atmosphere and great
-                  coffee. The baristas are friendly and knowledgeable about their craft. Highly recommend their
-                  cappuccinos.&quot;</em></p>
-              <p class="author">Catherine Lipschwitz</p><img src="images/author-img.png" loading="lazy" alt=""
-                class="author-image" />
-              <p class="quote-number"><span class="active-quote">2/</span>  24</p>
-            </div>
-            <div class="slide w-slide">
-              <p class="paragraph-big margin-bottom-small"><em>&quot;This coffee place has a cozy atmosphere and great
-                  coffee. The baristas are friendly and knowledgeable about their craft. Highly recommend their
-                  cappuccinos.&quot;</em></p>
-              <p class="author">Catherine Lipschwitz</p><img src="images/author-img.png" loading="lazy" alt=""
-                class="author-image" />
-              <p class="quote-number"><span class="active-quote">3/</span>  24</p>
-            </div>
+      <div class="testimonials-wrapper">
+        <h3 class="testimonials-heading">What Our Community Says</h3>
+        <div class="testimonial-cards">
+          <div class="testimonial-card animate-fade-in">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">I was skeptical about a coffee alternative at first, but Nauty Elixirs has completely changed my afternoon ritual. The rich, earthy flavor satisfies my coffee cravings, and I love that I can enjoy it any time of day without affecting my sleep.</p>
+            <div class="testimonial-author">Sarah M.</div>
+            <div class="testimonial-title">Wellness Coach</div>
           </div>
-          <div class="left-arrow w-slider-arrow-left"><img src="images/arrow-left.png" loading="lazy" alt="" /></div>
-          <div class="right-arrow w-slider-arrow-right"><img src="images/arrow-right.png" loading="lazy" alt="" /></div>
-          <div class="slide-nav w-slider-nav w-round w-num"></div>
+
+          <div class="testimonial-card animate-fade-in" style="animation-delay: 0.2s">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">As someone who had to give up coffee due to anxiety, finding Nauty Elixirs was a game-changer. The Dark Roast blend gives me that same comforting ritual without the jitters. Plus, my digestion has improved significantly!</p>
+            <div class="testimonial-author">Michael R.</div>
+            <div class="testimonial-title">Yoga Instructor</div>
+          </div>
+
+          <!--div class="testimonial-card animate-fade-in" style="animation-delay: 0.4s">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">The attention to detail in every blend is remarkable. You can taste the quality of the ingredients and the care put into crafting each batch. It's become an essential part of my morning meditation practice.</p>
+            <div class="testimonial-author">Emily K.</div>
+            <div class="testimonial-title">Holistic Nutritionist</div>
+          </div-->
         </div>
+
+        <style>
+          .testimonials-wrapper {
+            padding: 40px 20px;
+            text-align: center;
+          }
+
+          .testimonials-heading {
+            font-size: 24px;
+            margin-bottom: 30px;
+          }
+
+          .testimonial-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+
+          .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+          }
+
+          .quote-icon {
+            font-size: 40px;
+            color: #C15B3E;
+            line-height: 1;
+            margin-bottom: 10px;
+          }
+
+          .testimonial-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #594A3C;
+            margin-bottom: 15px;
+          }
+
+          .testimonial-author {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+          }
+
+          .testimonial-title {
+            font-size: 12px;
+            color: #666;
+          }
+
+          .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .testimonial-card {
+              width: 100%;
+              max-width: 300px;
+            }
+          }
+        </style>
       </div>
     </div>
   </div>
@@ -703,6 +789,126 @@
     });
   });
   </script>
+  <div id="social-media" class="social-media-section">
+    <div class="main-content social-content">
+      <div class="social-wrapper">
+        <h3 class="social-heading">Follow Us</h3>
+        <div class="social-cards">
+          
+          <a href="https://instagram.com/nauty.elixirs" target="_blank" class="social-card animate-fade-in">
+            <img src="images/insta.jpg" alt="Instagram" class="social-icon"/>
+      
+            <p>@nauty.elixirs</p>
+          </a>
+
+          <a href="https://facebook.com/nautyelixirs" target="_blank" class="social-card animate-fade-in" style="animation-delay: 0.2s">
+            <img src="images/fb.png" alt="Facebook" class="social-icon"/>
+           
+            <p>@nautyelixirs</p>
+          </a>
+
+          <a href="https://twitter.com/nautyelixirs" target="_blank" class="social-card animate-fade-in" style="animation-delay: 0.4s">
+            <img src="images/x.png" alt="Twitter" class="social-icon"/>
+           
+            <p>@nautyelixirs</p>
+          </a>
+
+          <a href="https://linkedin.com/company/nauty-elixirs" target="_blank" class="social-card animate-fade-in" style="animation-delay: 0.6s">
+            <img src="images/linkedin.jpg" alt="LinkedIn" class="social-icon"/>
+           
+            <p>Nauty Elixirs</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  .social-media-section {
+    padding: 60px 20px;
+    background-color: #F5F1EB;
+  }
+
+  .social-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #594A3C;
+  }
+
+  .social-cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: #594A3C;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .social-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  .social-card h4 {
+    margin: 10px 0;
+    color: #333;
+  }
+
+  .social-card p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .social-cards {
+      gap: 15px;
+    }
+    
+    .social-card {
+      width: calc(50% - 15px);
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .social-card {
+      width: 100%;
+    }
+  }
+  </style></a>
   <div class="footer">
     
       

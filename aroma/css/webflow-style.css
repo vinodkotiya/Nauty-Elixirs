@@ -3504,8 +3504,8 @@ p {
 .main-content.testimonials-content {
   max-width: 800px;
   color: #fff;
-  padding-top: 140px;
-  padding-bottom: 140px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .main-content.story-content {
@@ -3522,8 +3522,8 @@ p {
   height: 100%;
   max-width: 1440px;
   color: #fff;
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .main-content.category-body-content {
@@ -3877,21 +3877,21 @@ p {
 }
 
 .banner-coffee-cup {
-  z-index: 1;
+  z-index: -30;
   width: 19vw;
   position: absolute;
   top: auto;
   bottom: 10%;
   left: auto;
-  right: -25%;
+  right: 0%;
 }
 
 .banner-donut {
   width: 19vw;
   position: absolute;
-  top: auto;
-  bottom: 30%;
-  left: -20%;
+  top: 0;
+  bottom: 0%;
+  left: 0%;
   right: auto;
 }
 
@@ -3902,6 +3902,7 @@ p {
   bottom: 10%;
   left: 0%;
   right: auto;
+  z-index:-30;
 }
 
 .banner-coffee-beans-right {
@@ -5095,6 +5096,7 @@ p {
 
   .banner-coffee-cup, .banner-donut {
     width: 38vw;
+    right:-10%
   }
 
   .banner-coffee-beans-left {
@@ -5791,6 +5793,7 @@ p {
 
   .banner-coffee-cup, .banner-donut {
     width: 50vw;
+    right:-20%;
   }
 
   .quote-section {
@@ -5814,6 +5817,7 @@ p {
 
   .portafilter {
     width: 50vw;
+    display:none;
   }
 
   .cookie {
