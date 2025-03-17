@@ -81,106 +81,304 @@
   <div class="banner">
     <div class="main-content banner-content">
       <div class="banner-content">
-        <h1>FEEL NAUGHTY, <br/>STAY GROUNDED</h1>
+        <h1 class="animate-on-load fade-in-up">FEEL NAUGHTY, <br/>STAY GROUNDED</h1>
         <div class="center banner-center">
-          <p>Your caffeine-free ritual awaits</p>
+          <p class="animate-on-load fade-in-up" style="animation-delay: 0.4s">Your caffeine-free ritual awaits</p>
           <a href="/shop" data-w-id="864382fb-1d91-4d5a-2799-8b1e366efd15"
-            class="blue-button w-inline-block">
+            class="blue-button w-inline-block animate-on-load fade-in-up" style="animation-delay: 0.8s">
             <div>SHOP NOW</div>
             <div class="button-circle"></div>
           </a>
-        </div><img src="images/banner-coffe-bag.png" loading="lazy" alt="" sizes="(max-width: 750px) 80vw, 600px"
-          srcset="images/banner-coffe-bag.png 500w, images/banner-coffe-bag.png 600w" />
-      </div><img src="images/banner-cup.png" loading="lazy" alt="" class="banner-coffee-cup" /><img
-        src="images/banner-donut.png" loading="lazy" alt="" class="banner-donut" /><img
-        src="images/banner-coffee-beans-left.png" loading="lazy" alt="" class="banner-coffee-beans-left" /><img
-        src="images/banner-coffee-beans-right.png" loading="lazy" alt="" class="banner-coffee-beans-right" />
-    </div><img src="images/banner-leaf-left.png" loading="lazy" alt="" class="banner-leaf-left" /><img
-      src="images/leaf-right.png" loading="lazy" alt="" class="banner-leaf-right" />
+        </div>
+        <img src="images/banner-coffe-bag.png" loading="lazy" alt="" 
+          sizes="(max-width: 750px) 80vw, 600px"
+          srcset="images/banner-coffe-bag.png 500w, images/banner-coffe-bag.png 600w" 
+          class="animate-on-load fade-in-up" style="animation-delay: 1.2s" />
+      </div>
+      <img src="images/banner-cup.png" loading="lazy" alt="" 
+        class="banner-coffee-cup animate-on-load fade-in-left" style="animation-delay: 1.6s" />
+      <img src="images/banner-donut.png" loading="lazy" alt="" 
+        class="banner-donut animate-on-load fade-in-right" style="animation-delay: 2.0s" />
+      <img src="images/banner-coffee-beans-left.png"  alt="" 
+        class="banner-coffee-beans-left animate-on-load fade-in-left" style="animation-delay: 2.4s" loading="lazy" />
+      <img src="images/banner-coffee-beans-right.png" loading="lazy" alt="" 
+        class="banner-coffee-beans-right animate-on-load fade-in-right" style="animation-delay: 2.8s" />
+    </div>
+    <img src="images/banner-leaf-left.png" loading="lazy" alt="" 
+      class="banner-leaf-left animate-on-load fade-in-left" style="animation-delay: 3.2s" />
+    <img src="images/leaf-right.png" loading="lazy" alt="" 
+      class="banner-leaf-right animate-on-load fade-in-right" style="animation-delay: 3.6s" />
   </div>
+
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-on-load {
+      opacity: 0;
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .fade-in-left {
+      animation: fadeInLeft 0.8s ease forwards;
+    }
+
+    .fade-in-right {
+      animation: fadeInRight 0.8s ease forwards;
+    }
+  </style>
   <div class="quote-section">
-    <div class="quote-wrapper">
-      <p class="paragraph-big margin-bottom-small"><em>"Experience the rich, earthy flavor of our caffeine-free elixir, handcrafted on Salt Spring Island, BC. Skip the afternoon crash and embrace the calm with our organic blend of roasted roots and ancient chaga mushrooms."</em></p>
-      <p class="blue-text no-margin">- EARTHY • SMOOTH • COFFEE-LIKE FLAVOR</p>
+    <div loading="lazy" alt="" 
+      class="quote-wrapper reveal fade-in-right">
+      <p class="paragraph-big margin-bottom-small"><em>"When Sandra discovered the power of herbal alternatives on Salt Spring Island, BC, she created something extraordinary. Nauty Elixirs emerged from her vision to craft a caffeine-free ritual that celebrates nature's most potent botanicals, delivering rich flavor and wellness in perfect harmony."</em></p>
+      <p class="blue-text no-margin">- MINDFUL • NOURISHING • NATURALLY BOLD</p>
     </div>
     <div class="quote-section-characters"><img src="images/character-strolling.png" loading="lazy" alt=""
-        class="character-image" style="width:350px;height:270px" /><img src="images/character-cup.png" loading="lazy" alt=""
-        class="character-image" style="width:350px;height:270px" /><img src="images/character-reading.png" loading="lazy" alt=""
-        class="character-image" style="width:350px;height:270px" /></div>
-      <div style="height: 50px;"></div>
+        class="character-image animate-on-load fade-in-left" style="animation-delay: 5.4s; width:350px;height:270px;" loading="lazy"  /><img src="images/character-cup.png" loading="lazy" alt=""
+        class="character-image animate-on-load fade-in-up" style="animation-delay: 7.0s;width:350px;height:270px;" loading="lazy"  /><img src="images/character-reading.png" loading="lazy" alt=""
+        class="character-image animate-on-load fade-in-right" style="animation-delay: 8.4s;width:350px;height:270px;" loading="lazy"  /></div>
+    <div style="height: 50px;"></div>
+
     <div id="products" class="products-block">
-      <div class="products-wrapper">
-        <div class="products-collection w-dyn-list">
-            <div role="list" class="collection-list w-dyn-items">
-            <div role="listitem" class="collection-item w-dyn-item">
-              <div class="product-block">
-                <div class="product-block-top"><img src="images/banner-coffe-bag.png" loading="lazy" alt=""
-                    class="product-block-image" />
-                  <div class="product-block-header-wrapper">
-                    <h4 class="product-block-heading">Gut-Friendly Wellness</h4>
-                  </div>
-                </div>
-                <p class="product-description">Our blend features chicory root, a natural prebiotic that supports digestive health and microbiome balance.</p>
-                <div class="product-block-price-wrapper">
-                  <h4 class="product-block-price">Price $44</h4><a data-w-id="552bf3ed-0a0c-70da-5c1f-4069e8bc0626"
-                    href="/product/guatemala-swirl-sensation" class="blue-button w-inline-block">
-                    <div>Order Now</div>
-                    <div
-                      style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);transform-style:preserve-3d"
-                      class="button-circle"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div role="listitem" class="collection-item w-dyn-item">
-              <div class="product-block">
-                <div class="product-block-top"><img src="images/banner-coffe-bag5.png" loading="lazy" alt=""
-                    class="product-block-image" />
-                  <div class="product-block-header-wrapper">
-                    <h4 class="product-block-heading">Antioxidant Rich</h4>
-                  </div>
-                </div>
-                <p class="product-description">Wild-harvested chaga mushrooms deliver powerful antioxidants that support immunity and overall wellness.</p>
-                <div class="product-block-price-wrapper">
-                  <h4 class="product-block-price">Price $44</h4><a data-w-id="552bf3ed-0a0c-70da-5c1f-4069e8bc0626"
-                    href="/product/costa-rica-mocha-madness" class="blue-button w-inline-block">
-                    <div>Order Now</div>
-                    <div
-                      style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);transform-style:preserve-3d"
-                      class="button-circle"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div role="listitem" class="collection-item w-dyn-item">
-              <div class="product-block">
-                <div class="product-block-top"><img src="images/banner-coffe-bag6.png" loading="lazy" alt=""
-                    class="product-block-image" />
-                  <div class="product-block-header-wrapper">
-                    <h4 class="product-block-heading">No Caffeine Jitters</h4>
-                  </div>
-                </div>
-                <p class="product-description">Enjoy any time of day without disrupting your sleep cycle or causing energy crashes.</p>
-                <div class="product-block-price-wrapper">
-                  <h4 class="product-block-price">Price $44</h4><a data-w-id="552bf3ed-0a0c-70da-5c1f-4069e8bc0626"
-                    href="/product/indonesia-toasted-temptation" class="blue-button w-inline-block">
-                    <div>Order Now</div>
-                    <div
-                      style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(null) rotateY(null) rotateZ(0deg) skew(0, 0);transform-style:preserve-3d"
-                      class="button-circle"></div>
-                  </a>
-                </div>
-              </div>
+      <!-- Featured Products Row -->
+      <div class="featured-products">
+        <div class="featured-product">
+          <img src="images/banner-coffe-bag.png" loading="lazy" alt="" class="featured-image"/>
+          <h3>Herbal Dark Roast</h3>
+          <p>Experience an earthy, smooth, caffeine-free alternative crafted with organic herbs and botanicals. Rich in prebiotics from chicory and antioxidants from chaga.</p>
+          <div class="price-button">
+        <h4>$59.99</h4>
+        <a href="#" class="blue-button">Shop Now</a>
+          </div>
+        </div>
+        <div class="featured-product">
+          <img src="images/banner-coffe-bag5.png" loading="lazy" alt="" class="featured-image"/>
+          <h3>Herbal Light Roast</h3>
+          <p>A gentle blend with delicate botanicals and digestion-supporting dandelion root. Perfect for those seeking a milder, wellness-focused brew.</p>
+          <div class="price-button">
+        <h4>$59.99</h4>
+        <a href="#" class="blue-button">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regular Products Grid -->
+      <div class="regular-products">
+        <div class="product-grid">
+          <div class="product-item">
+            <img src="images/banner-coffe-bag.png" loading="lazy" alt="" class="product-image"/>
+            <h4>Morning Ritual Blend</h4>
+            <p>Start your day right</p>
+            <div class="price-button">
+              <h5>$44.99</h5>
+              <a href="#" class="blue-button small">Shop Now</a>
             </div>
           </div>
-        </div><img src="images/product-box-beans.png" loading="lazy" alt="" class="product-box-beans" />
+          <div class="product-item">
+            <img src="images/banner-coffe-bag5.png" loading="lazy" alt="" class="product-image"/>
+            <h4>Afternoon Delight</h4>
+            <p>Midday pick-me-up</p>
+            <div class="price-button">
+              <h5>$44.99</h5>
+              <a href="#" class="blue-button small">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-item">
+            <img src="images/banner-coffe-bag6.png" loading="lazy" alt="" class="product-image"/>
+            <h4>Evening Unwind</h4>
+            <p>Perfect nighttime companion</p>
+            <div class="price-button">
+              <h5>$44.99</h5>
+              <a href="#" class="blue-button small">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-item">
+            <img src="images/banner-coffe-bag.png" loading="lazy" alt="" class="product-image"/>
+            <h4>Travel Pack</h4>
+            <p>On-the-go wellness</p>
+            <div class="price-button">
+              <h5>$44.99</h5>
+              <a href="#" class="blue-button small">Shop Now</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <style>
+  .featured-products {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+
+  .featured-product {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .featured-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .regular-products {
+    padding: 0 20px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .product-item {
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .price-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .blue-button.small {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 992px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .featured-products {
+      flex-direction: column;
+    }
+    
+    .featured-product {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .featured-products,
+    .regular-products {
+      padding: 0 10px;
+    }
+  }
+  </style>
+  <div id="story" class="story" style="position: relative;">
+    <div class="main-content story-content">
+      <div class="story-wrapper" style="display: flex; align-items: stretch; flex-direction: row; gap: 20px; padding: 20px;">
+        <div class="story-text" style="flex: 1; padding: 20px; display: flex; flex-direction: column; justify-content: center; min-width: 300px;">
+            <p class="blue-text">The Nauty Story</p>
+            <h3>CRAFTED WITH INTENTION</h3>
+              <p class="margin-bottom-small">Nauty Elixirs began its journey on the rugged shores of Salt Spring Island, BC, where founder Sandra discovered the transformative power of herbal alternatives. Inspired by the island's raw beauty and deep connection to the land, she envisioned creating more than just a beverage—she dreamed of crafting a ritual that would nurture both body and spirit.</p>
+            <p class="margin-bottom-small">Each batch is meticulously handcrafted using certified organic herbs and botanicals, thoughtfully sourced from sustainable farms. Sandra's process combines ancient wisdom with modern innovation, carefully selecting ingredients like roasted chicory root, dandelion, and chaga mushrooms not only for their robust flavors but also for their natural wellness benefits.</p>
+            <p class="no-margin">The brand's motto "Feel Naughty, Stay Grounded" reflects Sandra's belief that indulgence and wellness can coexist harmoniously. Through Nauty Elixirs, she invites others to join her journey toward mindful living, offering a unique blend that celebrates nature's bounty while maintaining an unwavering commitment to quality and authenticity.</p>
+        </div>
+        <div class="story-image-container" style="flex: 1; position: relative; min-width: 300px;">
+          <img src="images/story-img.png" loading="lazy" alt=""
+            sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, 40vw"
+            srcset="images/story-img.png 500w, images/story-img.png 508w" 
+            class="story-image" 
+            style="width: 100%; height: auto; object-fit: contain; margin: 20px 0;" />
+          <img src="images/corner-left.png" loading="lazy" alt="" class="top-left-corner" 
+            style="position: absolute; top: -30px; left: -30px; width: 100px; height: auto;" />
+          <img src="images/corner-right.png" loading="lazy" alt="" class="bottom-right-corner" 
+            style="position: absolute; bottom: -40px; right: -40px; width: 100px; height: auto;" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    @media screen and (max-width: 768px) {
+      .story-wrapper {
+        flex-direction: column !important;
+      }
+      .story-text {
+        padding: 15px !important;
+      }
+      .story-image-container {
+        height: auto !important; /* Remove fixed height */
+      }
+      .story-image {
+        object-fit: contain !important; /* Prevent cropping */
+        height: auto !important; /* Let height adjust naturally */
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .story-image {
+        width: 100% !important;
+      }
+      h3 {
+        font-size: 24px !important;
+      }
+    }
+  </style>
   <div id="process" class="process">
     <div class="main-content process-content">
       <div class="process-wrapper">
-        <h3 class="margin-bottom-big">Take a look to make your perfect cup</h3>
+        <h4 class="margin-bottom-big">Take a look to make your perfect cup</h4>
         <div class="process-column">
           <div class="process-box"><img src="images/grinder.png" loading="lazy" alt="" class="process-icon" />
             <h5>Measure your perfect <br />portion</h5>
@@ -189,9 +387,9 @@
             <div class="process-box"><img src="images/heat-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
               src="images/heat-watter.png" loading="lazy" alt="" class="process-icon" />
             <h5>Heat your water mindfully</h5>
-            <p class="no-margin">Bring fresh, filtered water to a gentle boil. Let it cool slightly - this ensures the delicate herbs and mushrooms release their full potential without becoming bitter.</p>
+            <p class="no-margin">Bring fresh, filtered water to a gentle boil. Pour your hot water over the measured elixir blend. Watch as the rich, dark color begins to develop, releasing earthy aromas that signal the start of your ritual</p>
             </div>
-            <div class="process-box"><img src="images/kettle-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
+            <!--div class="process-box"><img src="images/kettle-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
               src="images/kettle.png" loading="lazy" alt="" class="process-icon" />
             <h5>Begin the steeping <br />journey</h5>
             <p class="no-margin">Pour your hot water over the measured elixir blend. Watch as the rich, dark color begins to develop, releasing earthy aromas that signal the start of your ritual.</p>
@@ -200,9 +398,9 @@
               src="images/pour.png" loading="lazy" alt="" class="process-icon" />
             <h5>Practice patience with <br />8-minute steep</h5>
             <p class="no-margin">Allow your elixir to steep for a full 8 minutes. This precise timing allows the roots and mushrooms to fully release their beneficial compounds and rich flavor.</p>
-            </div>
+            </div-->
             <div class="process-box"><img src="images/brew-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
-              src="images/brew.png" loading="lazy" alt="" class="process-icon" />
+              src="images/pour.png" loading="lazy" alt="" class="process-icon" />
             <h5>Customize your experience</h5>
             <p class="no-margin">After steeping, your elixir is ready to enjoy as is, or personalize it with your favorite milk alternative and natural sweetener for a comforting, coffee-like experience.</p>
             </div>
@@ -217,7 +415,7 @@
       src="images/leaf-right.png" loading="lazy" alt="" class="section-leaf-right" /><img src="images/portafilter.png"
       loading="lazy" alt="" class="portafilter" /><img src="images/cookie.png" loading="lazy" alt=""
       class="cookie" /><img src="images/donut.png" loading="lazy" alt="" class="donut" /><img
-      src="images/banner-cup.png" loading="lazy" alt="" class="coffee-cup" /><img
+      src="images/brew.png" loading="lazy" alt="" class="coffee-cup" /><img
       src="images/banner-coffee-beans-right.png" loading="lazy" alt="" class="section-bottom-beans" /><img
       src="images/sections-beans.png" loading="lazy" alt="" class="sction-top-beans" />
   </div>
@@ -262,52 +460,95 @@
       </div>
     </div>
   </div>
-  <div id="story" class="story">
-    <div class="main-content story-content">
-      <div class="story-wrapper">
-        <div class="story-text">
-            <p class="blue-text">The Nauty Story</p>
-            <h3>CRAFTED WITH INTENTION</h3>
-            <p class="margin-bottom-small">Nauty Elixirs was born on beautiful Salt Spring Island when founder Sandra discovered the power of herbal alternatives during her own wellness journey. Frustrated by coffee alternatives that lacked depth and character, she spent two years perfecting this unique blend.</p>
-            <p class="no-margin">Each batch is hand-crafted in small quantities to ensure quality and freshness, maintaining the connection between nature's gifts and your daily ritual.</p>
-        </div><img src="images/story-img.png" loading="lazy" alt=""
-          sizes="(max-width: 479px) 80vw, (max-width: 767px) 64vw, 40vw"
-          srcset="images/story-img.png 500w, images/story-img.png 508w" class="story-image" /><img
-          src="images/corner-left.png" loading="lazy" alt="" class="top-left-corner" /><img
-          src="images/corner-right.png" loading="lazy" alt="" class="bottom-right-corner" />
-      </div>
-    </div>
-  </div>
-  <div class="newsletter">
-    <div class="main-content newsletter-content">
-      <div class="newsletter-wrapper">
+  
+  <div class="benefits-section">
+    <div class="main-content benefits-content">
+      <div class="benefits-wrapper">
         <p class="blue-text">NOURISH YOUR BODY, GROUND YOUR SPIRIT</p>
-        
-        <div class="key-benefits-section">
-          
-          <div class="benefit">
+        <div class="benefits-container">
+          <div class="benefit-box fade-in">
+            <div class="benefit-icon"></div>
             <h4>Gut-Friendly Wellness</h4>
             <p>Our blend features chicory root, a natural prebiotic that supports digestive health and microbiome balance.</p>
           </div>
-          <div class="benefit">
+
+          <div class="benefit-box">
+            <div class="benefit-icon"></div>
             <h4>Gentle Cleansing</h4>
             <p>Dandelion root traditionally supports liver function and natural detoxification processes.</p>
           </div>
-          <div class="benefit">
+
+          <div class="benefit-box">
+            <div class="benefit-icon"></div>
             <h4>Antioxidant Rich</h4>
             <p>Wild-harvested chaga mushrooms deliver powerful antioxidants that support immunity and overall wellness.</p>
           </div>
-          <div class="benefit">
-            <h4>No Caffeine Jitters</h4>
-            <p>Enjoy any time of day without disrupting your sleep cycle or causing energy crashes.</p>
-          </div>
         </div>
-        <div class="social-wrapper"><a href="#" class="contact-link">hello@sandra.com</a><a
-            href="https://instagram.com/" target="_blank" class="instagram">instragram</a><a href="https://twitter.com/"
-            target="_blank" class="twitter">twitter</a></div>
       </div>
     </div>
   </div>
+
+  <style>
+  .benefits-section {
+    padding: 80px 20px;
+    background-color: #F5F1EB;
+  }
+
+  .benefits-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .benefit-box {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .benefit-icon {
+    background: #F5F1EB;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .benefit-box h4 {
+    color: #594A3C;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .benefit-box p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .benefits-container {
+      flex-direction: column;
+    }
+    
+    .benefit-box {
+      margin-bottom: 20px;
+    }
+  }
+  </style>
+
+ 
   <div class="footer">
     <div class="main-content footer-content">
       <div class="footer-wrapper">
@@ -323,21 +564,145 @@
      
     </div>
   </div>
-  <div class="newsletter">
-    <div class="main-content newsletter-content">
-      <div class="newsletter-wrapper">
+  <div class="faq-section">
+    <div class="main-content faq-content">
+      <div class="faq-wrapper">
         <p class="blue-text">FAQ Section</p>
-        <ul class="faq-list">
-          <li>Is Nauty Elixirs completely caffeine-free?</li>
-          <li>How does it compare to coffee?</li>
-          <li>Can I drink it while pregnant or nursing?</li>
-          <li>Is it suitable for children?</li>
-          <li>How should I store my Nauty Elixirs?</li>
-        </ul>
-        
+        <div class="accordion">
+            <div class="accordion-item">
+            <button type="button" aria-expanded="false" class="accordion-trigger">
+              Does it really taste like coffee?
+            </button>
+            <div class="accordion-content" hidden>
+              <p>While not identical to coffee, our elixirs deliver a rich, earthy, and satisfying flavor that coffee lovers appreciate. The roasted chicory root provides a deep, complex taste that many find reminiscent of their favorite brew.</p>
+            </div>
+            </div>
+            <div class="accordion-item">
+            <button type="button" aria-expanded="false" class="accordion-trigger">
+              Is it completely caffeine-free?
+            </button>
+            <div class="accordion-content" hidden>
+              <p>Yes, our products are 100% caffeine-free. They're perfect for those who are sensitive to caffeine, pregnant or nursing, or simply looking to reduce their caffeine intake without giving up their favorite ritual.</p>
+            </div>
+            </div>
+            <div class="accordion-item">
+            <button type="button" aria-expanded="false" class="accordion-trigger">
+              How do I prepare it?
+            </button>
+            <div class="accordion-content" hidden>
+              <p>Simply use 1-2 tablespoons per cup of hot water, steep for 5-7 minutes, strain, and enjoy! Add your favorite milk or sweetener if desired.</p>
+            </div>
+            </div>
+            <div class="accordion-item">
+            <button type="button" aria-expanded="false" class="accordion-trigger">
+              What are the health benefits?
+            </button>
+            <div class="accordion-content" hidden>
+              <p>Our blend offers multiple benefits including prebiotic support from chicory root, liver support from dandelion, and immune-boosting properties from chaga mushrooms. It's also rich in antioxidants and naturally supports digestion.</p>
+            </div>
+            </div>
+            <div class="accordion-item">
+            <button type="button" aria-expanded="false" class="accordion-trigger">
+              Are all ingredients organic?
+            </button>
+            <div class="accordion-content" hidden>
+              <p>Yes, we use certified organic ingredients whenever possible. Our wild-harvested chaga is sustainably sourced, and all our herbs are certified organic.</p>
+            </div>
+            </div>
+            <div class="accordion-item">
+            <button type="button" aria-expanded="false" class="accordion-trigger">
+              Do you ship internationally?
+            </button>
+            <div class="accordion-content" hidden>
+              <p>Currently, we ship throughout Canada and the United States. We're working on expanding our shipping capabilities to serve more international customers soon.</p>
+            </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <style>
+  .faq-section {
+    background-color: #F5F1EB; /* Creamy Beige */
+    padding: 4rem 2rem;
+  }
+
+  .accordion {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #8B7355; /* Earthy Brown */
+    margin-bottom: 1rem;
+  }
+
+  .accordion-trigger {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    border: none;
+    background: none;
+    color: #594A3C; /* Earthy Brown */
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .accordion-trigger:hover {
+    color: #C15B3E; /* Terracotta */
+  }
+
+  .accordion-trigger[aria-expanded="true"] {
+    color: #C15B3E; /* Terracotta */
+  }
+
+  .accordion-content {
+    padding: 0 1rem 1rem;
+  }
+
+  .accordion-content p {
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+    
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling;
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other accordion items
+        triggers.forEach(otherTrigger => {
+          if (otherTrigger !== trigger) {
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherTrigger.nextElementSibling.hidden = true;
+          }
+        });
+        
+        // Toggle current accordion item
+        trigger.setAttribute('aria-expanded', !isOpen);
+        content.hidden = isOpen;
+      });
+    });
+  });
+  </script>
+    margin-bottom: 2rem;
+  }
+  </style>
+
+  <script>
+  document.querySelectorAll('.accordion-trigger').forEach(button => {
+    button.addEventListener('click', () => {
+      const accordionContent = button.nextElementSibling;
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      
+      button.setAttribute('aria-expanded', !isOpen);
+      accordionContent.hidden = isOpen;
+    });
+  });
+  </script>
   <div class="footer">
     
       

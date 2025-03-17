@@ -1,17 +1,32 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   margin: 0;
-  color: #333;
+  color: #43464B;
   background-color: #fff8f1;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   font-size: 14px;
   line-height: 20px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+blockquote, .testimonial {
+  font-family: 'Playfair Display', serif;
+}
+
+.button, .cta {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* Add this CSS to make elements responsive and prevent overflow */
 * {
   box-sizing: border-box;
@@ -3371,79 +3386,79 @@ textarea.w-input, textarea.w-select {
     font-size: 16px;
   }
 }
-
 body {
-  color: #767f8b;
+  color: #43464B; /* Soft Charcoal */
   background-image: url("../images/grey-pattern.jpg");
   background-position: 0 0;
   background-size: auto;
-  font-family: Zilla Slab, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
 h1 {
-  color: #030c24;
+  color: #2a2a2a;
   margin-top: 0;
   margin-bottom: 30px;
-  font-family: Luckiest Guy, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 100px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 110px;
 }
 
 h2 {
-  color: #030c24;
+  color: #2a2a2a;
   margin-top: 0;
   margin-bottom: 30px;
-  font-family: Luckiest Guy, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 80px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 90px;
 }
 
 h3 {
-  color: #030c24;
+  color: #2a2a2a;
   margin-top: 0;
   margin-bottom: 30px;
-  font-family: Luckiest Guy, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 56px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 66px;
 }
 
 h4 {
-  color: #030c24;
+  color: #2a2a2a;
   margin-top: 0;
   margin-bottom: 20px;
-  font-family: Luckiest Guy, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 46px;
 }
 
 h5 {
-  color: #030c24;
+  color: #2a2a2a;
   margin-top: 0;
   margin-bottom: 15px;
-  font-family: Luckiest Guy, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 36px;
 }
 
 h6 {
-  color: #030c24;
+  color: #2a2a2a;
   margin-top: 0;
   margin-bottom: 15px;
-  font-family: Luckiest Guy, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 32px;
 }
 
 p {
   margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   line-height: 30px;
 }
@@ -3635,7 +3650,6 @@ p {
   line-height: 40px;
   display: inline-block;
 }
-
 .link-inner {
   justify-content: center;
   align-items: center;
@@ -3659,7 +3673,7 @@ p {
 }
 
 .style-over-title {
-  color: #030c24;
+  color: #5B3C25; /* Earthy Brown */
   text-align: center;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -3677,7 +3691,7 @@ p {
 }
 
 .emphasis-holder, .rich-text-holder, .paragraph-holder, .link-holder {
-  border: 2px solid #0b5c74;
+  border: 2px solid #6B8E4E; /* Muted Olive Green */
   margin-bottom: 80px;
   padding-bottom: 40px;
   padding-left: 40px;
@@ -3691,7 +3705,7 @@ p {
 }
 
 .color-holder {
-  border: 2px solid #0b5c74;
+  border: 2px solid #6B8E4E; /* Muted Olive Green */
   padding-bottom: 40px;
   padding-left: 40px;
   padding-right: 40px;
@@ -3707,8 +3721,8 @@ p {
 }
 
 .blue-button {
-  color: #fff;
-  background-color: #c06342;
+  color: #F2E6D8; /* Creamy Beige */
+  background-color: #E86D4C; /* Terracotta */
   border-radius: 40px;
   padding: 20px 90px 20px 40px;
   font-size: 16px;
@@ -3719,31 +3733,32 @@ p {
 }
 
 .blue-button:hover {
-  background-color: #006cf0;
+  color: #F2E6D8; /* Creamy Beige */
+  background-color: #5B3C25; /* Earthy Brown */
 }
 
 .color-grey {
   width: 100%;
   height: 70px;
-  background-color: #767f8b;
+  background-color: #43464B; /* Soft Charcoal */
 }
 
 .color-dodger-blue {
   width: 100%;
   height: 70px;
-  background-color: #1880ff;
+  background-color: #6B8E4E; /* Muted Olive Green */
 }
 
 .color-royal-blue {
   width: 100%;
   height: 70px;
-  background-color: #006cf0;
+  background-color: #5B3C25; /* Earthy Brown */
 }
 
 .button-circle {
   width: 60px;
   height: 60px;
-  background-color: #c06342;
+  background-color: #E86D4C; /* Terracotta */
   background-image: url("../images/cta-arrow.svg");
   background-position: 50%;
   background-repeat: no-repeat;
@@ -3917,7 +3932,7 @@ p {
 }
 
 .blue-text {
-  color: #1880ff;
+  color: #E86D4C; /* Changed to Terracotta from blue */
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -4047,7 +4062,6 @@ p {
   left: 15%;
   right: auto;
 }
-
 .testimonials {
   background-image: url("../images/blue-pattern.jpg");
   background-position: 0 0;
@@ -4056,10 +4070,11 @@ p {
 
 .testimonails-wrapper {
   text-align: center;
+  padding: 20px 0; /* Reduced padding */
 }
 
 .testimonial-slider {
-  height: auto;
+  height: 33vh; /* Reduced to 33% viewport height */
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -4069,17 +4084,21 @@ p {
 
 .slide {
   text-align: center;
+  padding: 10px; /* Added minimal padding */
 }
 
 .author {
   color: #767f8b;
   letter-spacing: 2px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  margin-bottom: 20px; /* Reduced margin */
 }
 
 .author-image {
-  margin-bottom: 60px;
+  margin-bottom: 30px; /* Reduced margin */
+  max-height: 15vh; /* Limited image height */
+  width: auto;
+  object-fit: contain;
 }
 
 .quote-number {
@@ -4221,7 +4240,7 @@ p {
 }
 
 .footer {
-  background-image: url("../images/blue-pattern.jpg");
+  background-image: url("../images/blue-pattern2.png");
   background-position: 0 0;
   background-size: auto;
 }
@@ -4229,25 +4248,25 @@ p {
 .footer-top {
   max-width: 1280px;
   text-align: center;
-  margin-bottom: 140px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .footer-heading {
-  color: #fff;
-  font-size: 120px;
-  line-height: 130px;
+  color: #79553D; /* Changed to Creamy Beige */
+  font-size: 60px;
+  line-height: 30px;
 }
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid #2a4363;
-  padding-top: 60px;
+  border-top: 1px solid #6B8E4E; /* Changed to Muted Olive Green */
+  padding-top: 10px;
 }
 
 .footer-logo {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .footer-links {
@@ -4259,18 +4278,18 @@ p {
 }
 
 .footer-link {
-  color: #767f8b;
+  color: #43464B; /* Changed to Soft Charcoal */
   font-size: 14px;
   text-decoration: none;
   transition: color .3s;
 }
 
 .footer-link:hover {
-  color: #fff;
+  color: #E86D4C; /* Changed to Terracotta */
 }
 
 .footer-paragraph {
-  color: #767f8b;
+  color: #43464B; /* Changed to Soft Charcoal */
   margin-bottom: 0;
   font-size: 14px;
   line-height: 20px;
@@ -4305,7 +4324,7 @@ p {
 
 .ecommerce-image-wrapper {
   width: 50%;
-  background-color: #fff;
+  background-color: #F2E6D8; /* Changed to Creamy Beige */
   border-radius: 20px;
   justify-content: center;
   align-items: center;
@@ -4319,13 +4338,13 @@ p {
 }
 
 .ecommerce-info-top {
-  border-bottom: 1px solid #767f8b;
+  border-bottom: 1px solid #43464B; /* Changed to Soft Charcoal */
   margin-bottom: 40px;
   padding-bottom: 60px;
 }
 
 .descritpion-paragraph {
-  color: #767f8b;
+  color: #43464B; /* Changed to Soft Charcoal */
   margin-bottom: 0;
 }
 
@@ -4336,7 +4355,7 @@ p {
 }
 
 .ecommerce-info-price {
-  color: #1880ff;
+  color: #5B3C25; /* Changed to Earthy Brown */
   letter-spacing: 1px;
 }
 
@@ -4350,7 +4369,7 @@ p {
   height: 60px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #767f8b;
+  border-color: #43464B; /* Changed to Soft Charcoal */
   border-radius: 40px;
   margin-bottom: 0;
   margin-right: 10px;
