@@ -69,11 +69,12 @@
         </button>
         <nav id="nav" class="nav">
           <ul class="nav-list">
-            <li><a href="https://shop.nautyelixirs.com" class="nav-link">Shop</a></li>
+            <li><a href="https://shop.nautyelixirs.ca" class="nav-link">Shop</a></li>
             <li><a href="wholesale.html" class="nav-link">Wholesale</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="faq.html" class="nav-link">FAQs</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="wellness.html" class="nav-link">Wellness Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -96,7 +97,7 @@
   .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+   /* padding: 1rem; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,12 +109,12 @@
   }
 
   .logo-img {
-    height: 80px;
-    transition: height 0.3s ease;
+    height: 120px;
+    transition: height 1s ease;
   }
 
   .header.sticky .logo-img {
-    height: 50px;
+    height: 70px;
   }
 
   .nav-list {
@@ -285,9 +286,17 @@
     <div class="container hero-content" style="display: flex; justify-content: center; align-items: center; text-align: center; height: 100%; padding: 0 1rem;">
       <div class="hero-text" style="max-width: 600px;">
         <div style="background: rgba(0, 0, 0, 0.5); padding: 2rem; border-radius: 20px;">
-          <h1 class="hero-title animate-fly-in-left" style="color: white; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 1rem;line-height: 70px;">FEEL NAUGHTY, STAY GROUNDED</h1>
-          <p class="hero-subtitle animate-fly-in-right" style="color: white; font-family: 'Zilla Slab', serif; font-size: 2.25rem; margin-bottom: 2rem;">Your caffeine-free ritual awaits</p>
-          <a href="https://shop.nautyelixirs.com" class="btn btn-primary animate-fly-in-up" style="padding: 0.75rem 2rem; font-size: 2rem; background-color: #C65D45; color: white; border: none; border-radius: 9999px; text-decoration: none;">Shop Now</a>
+            <style>
+            @font-face {
+              font-family: 'TANTangkiwood';
+              src: url('css/TAN_-_TANGKIWOODcanva.woff2') format('woff2');
+              font-weight: normal;
+              font-style: normal;
+            }
+            </style>
+            <h1 class="hero-title animate-fly-in-left" style="color: white; font-family: 'TANTangkiwood', serif; font-size: 3.5rem; margin-bottom: 1rem; line-height: 70px;">FEEL NAUGHTY, STAY GROUNDED</h1>
+            <p class="hero-subtitle animate-fly-in-right" style="color: white; font-family: 'TANTangkiwood', serif; font-size: 2.25rem; margin-bottom: 2rem;">Your caffeine-free ritual awaits</p>
+            <a href="https://shop.nautyelixirs.ca" class="btn btn-primary animate-fly-in-up" style="padding: 0.75rem 2rem; font-size: 2rem; background-color: #C65D45; color: white; border: none; border-radius: 9999px; text-decoration: none; font-family:  serif;">Shop Now</a>
         </div> </div>
       </div>
     </div>
@@ -346,6 +355,19 @@
       background-size: cover;
       background-position: center;
       transition: opacity 1s ease-in-out;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: contain;
+      background-position: center;
+      filter: blur(20px);
+      transform: scale(1);
+      z-index: -1;
+      }
     }
 
     .hero-bg.active {
@@ -470,347 +492,355 @@
     });
   </script>
   <div class="quote-section">
-    
-   
-  <div class="products-slideshow">
-    <div class="slideshow-container">
-      <div class="slides-wrapper">
-        <div class="slide active">
-          <div class="product-card">
-            <div class="product-image-wrapper">
-              <img src="images/banner-coffe-bag.png" alt="Herbal Dark Roast" class="product-image main" onerror="this.src='images/placeholder.png';">
-              <img src="images/character-strolling.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
-            </div>
-            <h4>Herbal Dark Roast</h4>
-            <p>Experience an earthy, smooth, caffeine-free alternative crafted with organic herbs and botanicals.</p>
-            <div class="product-footer">
-              <span class="price">$59.99</span>
-              <a href="#" class="shop-button">Shop Now</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image-wrapper">
-              <img src="images/banner-coffe-bag5.png" alt="Herbal Light Roast" class="product-image main" onerror="this.src='images/placeholder.png';">
-              <img src="images/character-cup.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
-            </div>
-            <h4>Herbal Light Roast</h4>
-            <p>A gentle blend with delicate botanicals and digestion-supporting dandelion root.</p>
-            <div class="product-footer">
-              <span class="price">$59.99</span>
-              <a href="#" class="shop-button">Shop Now</a>
+    <div class="products-slideshow">
+      <div class="slideshow-container">
+        <div class="slides-wrapper">
+          <div class="slide">
+            <div class="product-card">
+              <div class="product-image-wrapper">
+                <img src="images/banner-coffe-bag.png" alt="Herbal Dark Roast" class="product-image main" onerror="this.src='images/placeholder.png';">
+                <img src="images/character-strolling.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+              </div>
+              <h4>Herbal Dark Roast</h4>
+              <p>Experience an earthy, smooth, caffeine-free alternative crafted with organic herbs and botanicals.</p>
+              <div class="product-footer">
+                <span class="price">$59.99</span>
+                <a href="#" class="shop-button">Shop Now</a>
+              </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-image-wrapper">
-              <img src="images/banner-coffe-bag6.png" alt="Evening Unwind" class="product-image main" onerror="this.src='images/placeholder.png';">
-              <img src="images/character-reading.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
-            </div>
-            <h4>Evening Unwind</h4>
-            <p>Perfect nighttime companion for a relaxing end to your day.</p>
-            <div class="product-footer">
-              <span class="price">$44.99</span>
-              <a href="#" class="shop-button">Shop Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="product-card">
-            <div class="product-image-wrapper">
-              <img src="images/banner-coffe-bag7.png" alt="Nauty Powder Original" class="product-image main" onerror="this.src='images/placeholder.png';">
-              <img src="images/character-mixing.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
-            </div>
-            <h4>Nauty Powder Original</h4>
-            <p>A versatile powder blend perfect for smoothies, lattes, or baking.</p>
-            <div class="product-footer">
-              <span class="price">$39.99</span>
-              <a href="#" class="shop-button">Shop Now</a>
+          <div class="slide">
+            <div class="product-card">
+              <div class="product-image-wrapper">
+                <img src="images/banner-coffe-bag5.png" alt="Herbal Light Roast" class="product-image main" onerror="this.src='images/placeholder.png';">
+                <img src="images/character-cup.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+              </div>
+              <h4>Herbal Light Roast</h4>
+              <p>A gentle blend with delicate botanicals and digestion-supporting dandelion root.</p>
+              <div class="product-footer">
+                <span class="price">$59.99</span>
+                <a href="#" class="shop-button">Shop Now</a>
+              </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-image-wrapper">
-              <img src="images/banner-coffe-bag8.png" alt="Nauty Powder Spiced" class="product-image main" onerror="this.src='images/placeholder.png';">
-              <img src="images/character-spices.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
-            </div>
-            <h4>Nauty Powder Spiced</h4>
-            <p>A warming blend with hints of cinnamon and nutmeg for a cozy experience.</p>
-            <div class="product-footer">
-              <span class="price">$42.99</span>
-              <a href="#" class="shop-button">Shop Now</a>
+          <div class="slide">
+            <div class="product-card">
+              <div class="product-image-wrapper">
+                <img src="images/banner-coffe-bag6.png" alt="Evening Unwind" class="product-image main" onerror="this.src='images/placeholder.png';">
+                <img src="images/character-reading.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+              </div>
+              <h4>Evening Unwind</h4>
+              <p>Perfect nighttime companion for a relaxing end to your day.</p>
+              <div class="product-footer">
+                <span class="price">$44.99</span>
+                <a href="#" class="shop-button">Shop Now</a>
+              </div>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-image-wrapper">
-              <img src="images/banner-coffe-bag8.png" alt="Nauty Powder Spiced" class="product-image main" onerror="this.src='images/placeholder.png';">
-              <img src="images/character-spices.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+          <div class="slide">
+            <div class="product-card">
+              <div class="product-image-wrapper">
+                <img src="images/banner-coffe-bag7.png" alt="Nauty Powder Original" class="product-image main" onerror="this.src='images/placeholder.png';">
+                <img src="images/character4.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+              </div>
+              <h4>Nauty Powder Original</h4>
+              <p>A versatile powder blend perfect for smoothies, lattes, or baking.</p>
+              <div class="product-footer">
+                <span class="price">$39.99</span>
+                <a href="#" class="shop-button">Shop Now</a>
+              </div>
             </div>
-            <h4>Nauty Powder Spiced</h4>
-            <p>A warming blend with hints of cinnamon and nutmeg for a cozy experience.</p>
-            <div class="product-footer">
-              <span class="price">$42.99</span>
-              <a href="#" class="shop-button">Shop Now</a>
+          </div>
+          <div class="slide">
+            <div class="product-card">
+              <div class="product-image-wrapper">
+                <img src="images/banner-coffe-bag8.png" alt="Nauty Powder Spiced" class="product-image main" onerror="this.src='images/placeholder.png';">
+                <img src="images/sandra2.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+              </div>
+              <h4>Nauty Powder Spiced</h4>
+              <p>A warming blend with hints of cinnamon and nutmeg for a cozy experience.</p>
+              <div class="product-footer">
+                <span class="price">$42.99</span>
+                <a href="#" class="shop-button">Shop Now</a>
+              </div>
             </div>
           </div>
         </div>
+        <button class="slide-nav prev">❮</button>
+        <button class="slide-nav next">❯</button>
+        <div class="slide-dots"></div>
       </div>
-      <button class="slide-nav prev">❮</button>
-      <button class="slide-nav next">❯</button>
-      <div class="slide-dots"></div>
     </div>
-  </div>
-  <div loading="lazy" alt="" 
-  class="quote-wrapper reveal fade-in-right">
-  <p class="paragraph-big margin-bottom-small"><em>"When Sandra discovered the power of herbal alternatives on Salt Spring Island, BC, she created something extraordinary. Nauty Elixirs emerged from her vision to craft a caffeine-free ritual that celebrates nature's most potent botanicals, delivering rich flavor and wellness in perfect harmony."</em></p>
-  <p class="blue-text no-margin">- MINDFUL • NOURISHING • NATURALLY BOLD</p>
-</div>
-  <style>
-  .products-slideshow {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+    <div loading="lazy" alt="" class="quote-wrapper reveal fade-in-right">
+      <p class="paragraph-big margin-bottom-small"><em>"When Sandra discovered the power of herbal alternatives on Salt Spring Island, BC, she created something extraordinary. Nauty Elixirs emerged from her vision to craft a caffeine-free ritual that celebrates nature's most potent botanicals, delivering rich flavor and wellness in perfect harmony."</em></p>
+      <p class="blue-text no-margin">- MINDFUL • NOURISHING • NATURALLY BOLD</p>
+    </div>
+    <style>
+      .products-slideshow {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-  .slideshow-container {
-    position: relative;
-    overflow: hidden;
-  }
+      .slideshow-container {
+        position: relative;
+        overflow: hidden;
+      }
 
-  .slides-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
+      .slides-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
 
-  .slide {
-    display: flex;
-    gap: 30px;
-    min-width: 100%;
-    padding: 20px 0;
-  }
+      .slide {
+        flex: 0 0 33.333%; /* Default: Show 3 slides at a time */
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
 
-  .product-card {
-    flex: 1;
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+      @media (max-width: 768px) {
+        .slide {
+          flex: 0 0 100%; /* Show 1 slide at a time on smaller screens */
+        }
+      }
 
-  .product-card:hover {
-    transform: translateY(-10px);
-  }
+      .product-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .product-image-wrapper {
-    position: relative;
-    width: 200px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+      .product-card:hover {
+        transform: translateY(-10px);
+      }
 
-  .product-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-  }
+      .product-image-wrapper {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-  .product-image.hover {
-    opacity: 0;
-  }
+      .product-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease;
+      }
 
-  .product-image-wrapper:hover .product-image.main {
-    opacity: 0;
-  }
+      .product-image.hover {
+        opacity: 0;
+      }
 
-  .product-image-wrapper:hover .product-image.hover {
-    opacity: 1;
-  }
+      .product-image-wrapper:hover .product-image.main {
+        opacity: 0;
+      }
 
-  .product-card h4 {
-    margin: 0 0 10px;
-    color: #333;
-    text-align: center;
-  }
+      .product-image-wrapper:hover .product-image.hover {
+        opacity: 1;
+      }
 
-  .product-card p {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+      .product-card h4 {
+        font-family: 'TANTangkiwood', serif;
+        margin: 0 0 10px;
+        color: #333;
+        text-align: center;
+      }
 
-  .product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
+      .product-card p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-  .price {
-    font-weight: bold;
-    color: #C15B3E;
-  }
+      .product-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
 
-  .shop-button {
-    padding: 8px 15px;
-    background: #C15B3E;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
+      .price {
+        font-weight: bold;
+        color: #C15B3E;
+      }
 
-  .shop-button:hover {
-    background: #A84935;
-  }
+      .shop-button {
+        padding: 8px 15px;
+        background: #C15B3E;
+        color: white;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
 
-  .slide-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
+      .shop-button:hover {
+        background: #A84935;
+      }
 
-  .slide-nav:hover {
-    background: rgba(0,0,0,0.7);
-  }
+      .slide-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
 
-  .prev { left: 10px; }
-  .next { right: 10px; }
+      .slide-nav:hover {
+        background: rgba(0, 0, 0, 0.7);
+      }
 
-  .slide-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
+      .prev {
+        left: 10px;
+      }
 
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ddd;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
+      .next {
+        right: 10px;
+      }
 
-  .dot.active {
-    background: #C15B3E;
-  }
+      .slide-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
 
-  @media (max-width: 768px) {
-    .slide {
-      flex-direction: column;
-    }
-    
-    .product-card {
-      margin: 10px 0;
-    }
-  }
-  </style>
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const slidesWrapper = document.querySelector('.slides-wrapper');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const dotsContainer = document.querySelector('.slide-dots');
-    
-    let currentSlide = 0;
-    let autoScrollInterval;
-    
-    // Create dots
-    slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-    
-    function updateDots() {
-      document.querySelectorAll('.dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
+      .dot.active {
+        background: #C15B3E;
+      }
+
+      @media (max-width: 768px) {
+        .slide {
+          flex: 0 0 100%; /* Show 1 slide at a time on smaller screens */
+          justify-content: center; /* Center the content horizontally */
+          align-items: center; /* Center the content vertically */
+          display: flex; /* Ensure proper alignment */
+          padding: 20px; /* Add padding for spacing */
+          box-sizing: border-box; /* Include padding in width calculation */
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const slidesWrapper = document.querySelector('.slides-wrapper');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dotsContainer = document.querySelector('.slide-dots');
+
+        let currentSlide = 0;
+        let autoScrollInterval;
+
+        // Create dots
+        slides.forEach((_, index) => {
+          const dot = document.createElement('div');
+          dot.classList.add('dot');
+          if (index === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(index));
+          dotsContainer.appendChild(dot);
+        });
+
+        function updateDots() {
+          document.querySelectorAll('.dot').forEach((dot, index) => {
+          const slidesPerView = window.innerWidth <= 768 ? 1 : 3; // Show 1 slide on small screens, 3 on larger screens
+          slidesWrapper.style.transform = `translateX(-${currentSlide * (100 / slidesPerView)}%)`;
+          });
+        }
+
+        function goToSlide(index) {
+          currentSlide = index;
+          slidesWrapper.style.transform = `translateX(-${currentSlide * (100 / 3)}%)`; // Adjust for 3 slides visible
+          updateDots();
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          goToSlide(currentSlide);
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          goToSlide(currentSlide);
+        }
+
+        // Auto scroll
+        function startAutoScroll() {
+          autoScrollInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoScroll() {
+          clearInterval(autoScrollInterval);
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          stopAutoScroll();
+          startAutoScroll();
+        });
+
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          stopAutoScroll();
+          startAutoScroll();
+        });
+
+        slidesWrapper.addEventListener('mouseenter', stopAutoScroll);
+        slidesWrapper.addEventListener('mouseleave', startAutoScroll);
+
+        // Start auto scroll
+        startAutoScroll();
       });
-    }
-    
-    function goToSlide(index) {
-      currentSlide = index;
-      slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-      updateDots();
-    }
-    
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      goToSlide(currentSlide);
-    }
-    
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      goToSlide(currentSlide);
-    }
-    
-    // Auto scroll
-    function startAutoScroll() {
-      autoScrollInterval = setInterval(nextSlide, 5000);
-    }
-    
-    function stopAutoScroll() {
-      clearInterval(autoScrollInterval);
-    }
-    
-    // Event listeners
-    prevBtn.addEventListener('click', () => {
-      prevSlide();
-      stopAutoScroll();
-      startAutoScroll();
-    });
-    
-    nextBtn.addEventListener('click', () => {
-      nextSlide();
-      stopAutoScroll();
-      startAutoScroll();
-    });
-    
-    slidesWrapper.addEventListener('mouseenter', stopAutoScroll);
-    slidesWrapper.addEventListener('mouseleave', startAutoScroll);
-    
-    // Start auto scroll
-    startAutoScroll();
-  });
-  </script>
+    </script>
+  </div>
   <div id="story" class="story" style="position: relative;">
     <div class="main-content story-content">
       <div class="story-wrapper" style="display: flex; align-items: stretch; flex-direction: row; gap: 20px; padding: 20px;">
         <div class="story-text" style="flex: 1; padding: 20px; display: flex; flex-direction: column; justify-content: center; min-width: 300px;">
-            <p class="blue-text">The Nauty Story</p>
-            <h3>CRAFTED WITH INTENTION</h3>
-              <p class="margin-bottom-small">Nauty Elixirs began its journey on the rugged shores of Salt Spring Island, BC, where founder Sandra discovered the transformative power of herbal alternatives. Inspired by the island's raw beauty and deep connection to the land, she envisioned creating more than just a beverage—she dreamed of crafting a ritual that would nurture both body and spirit.</p>
-            <p class="margin-bottom-small">Each batch is meticulously handcrafted using certified organic herbs and botanicals, thoughtfully sourced from sustainable farms. Sandra's process combines ancient wisdom with modern innovation, carefully selecting ingredients like roasted chicory root, dandelion, and chaga mushrooms not only for their robust flavors but also for their natural wellness benefits.</p>
-            <p class="no-margin">The brand's motto "Feel Naughty, Stay Grounded" reflects Sandra's belief that indulgence and wellness can coexist harmoniously. Through Nauty Elixirs, she invites others to join her journey toward mindful living, offering a unique blend that celebrates nature's bounty while maintaining an unwavering commitment to quality and authenticity.</p>
+          <p class="blue-text">The Nauty Story</p>
+          <h3>CRAFTED WITH INTENTION</h3>
+          <p class="margin-bottom-small">Nauty Elixirs began its journey on the rugged shores of Salt Spring Island, BC, where founder Sandra discovered the transformative power of herbal alternatives. Inspired by the island's raw beauty and deep connection to the land, she envisioned creating more than just a beverage—she dreamed of crafting a ritual that would nurture both body and spirit.</p>
+          <p class="margin-bottom-small">Each batch is meticulously handcrafted using certified organic herbs and botanicals, thoughtfully sourced from sustainable farms. Sandra's process combines ancient wisdom with modern innovation, carefully selecting ingredients like roasted chicory root, dandelion, and chaga mushrooms not only for their robust flavors but also for their natural wellness benefits.</p>
+          <p class="no-margin">The brand's motto "Feel Naughty, Stay Grounded" reflects Sandra's belief that indulgence and wellness can coexist harmoniously. Through Nauty Elixirs, she invites others to join her journey toward mindful living, offering a unique blend that celebrates nature's bounty while maintaining an unwavering commitment to quality and authenticity.</p>
         </div>
         <div class="story-image-container" style="flex: 1; position: relative; min-width: 300px;">
-          <img src="images/story-img.png" loading="lazy" alt=""
+            <video id="storyVideo" style="display: none; width: 100%; height: auto;" controls autoplay playsinline muted>
+              <source src="images/sandradrift.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <img id="storyImage" src="images/sandra4.png" loading="lazy" alt=""
             sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, 40vw"
-            srcset="images/story-img.png 500w, images/story-img.png 508w" 
+            srcset="images/sandra4.png 500w, images/sandra4.png 508w" 
             class="story-image" 
-            style="width: 100%; height: auto; object-fit: contain; margin: 20px 0;" />
+            style="width: 100%; height: auto; object-fit: contain; margin: 20px 0;" /> </div>
           <img src="images/corner-left.png" loading="lazy" alt="" class="top-left-corner" 
             style="position: absolute; top: -30px; left: -30px; width: 100px; height: auto;" />
           <img src="images/corner-right.png" loading="lazy" alt="" class="bottom-right-corner" 
@@ -819,6 +849,33 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const storyImage = document.getElementById('storyImage');
+      const storyVideo = document.getElementById('storyVideo');
+      const storySection = document.getElementById('story');
+      let videoPlayed = false;
+
+      function playVideoOnScroll() {
+        const rect = storySection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible && !videoPlayed) {
+          videoPlayed = true;
+          setTimeout(() => {
+            storyImage.style.display = 'none';
+            storyVideo.style.display = 'block';
+            storyVideo.muted = true; // Ensure video is muted for autoplay
+            storyVideo.play().catch(error => console.error('Video playback failed:', error));
+          }, 5000); // Play video after 5 seconds of visibility
+        }
+      }
+
+      window.addEventListener('scroll', playVideoOnScroll);
+    });
+  </script>
+
   <style>
     @media screen and (max-width: 768px) {
       .story-wrapper {
@@ -828,15 +885,15 @@
         padding: 15px !important;
       }
       .story-image-container {
-        height: auto !important; /* Remove fixed height */
+        height: auto !important;
       }
-      .story-image {
-        object-fit: contain !important; /* Prevent cropping */
-        height: auto !important; /* Let height adjust naturally */
+      .story-image, #storyVideo {
+        object-fit: contain !important;
+        height: auto !important;
       }
     }
     @media screen and (max-width: 480px) {
-      .story-image {
+      .story-image, #storyVideo {
         width: 100% !important;
       }
       h3 {
@@ -844,6 +901,7 @@
       }
     }
   </style>
+  <!--
   <div id="process" class="process">
     <div class="main-content process-content">
       <div class="process-wrapper">
@@ -858,16 +916,7 @@
             <h5>Heat your water mindfully</h5>
             <p class="no-margin">Bring fresh, filtered water to a gentle boil. Pour your hot water over the measured elixir blend. Watch as the rich, dark color begins to develop, releasing earthy aromas that signal the start of your ritual</p>
             </div>
-            <!--div class="process-box"><img src="images/kettle-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
-              src="images/kettle.png" loading="lazy" alt="" class="process-icon" />
-            <h5>Begin the steeping <br />journey</h5>
-            <p class="no-margin">Pour your hot water over the measured elixir blend. Watch as the rich, dark color begins to develop, releasing earthy aromas that signal the start of your ritual.</p>
-            </div>
-            <div class="process-box"><img src="images/pour-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
-              src="images/pour.png" loading="lazy" alt="" class="process-icon" />
-            <h5>Practice patience with <br />8-minute steep</h5>
-            <p class="no-margin">Allow your elixir to steep for a full 8 minutes. This precise timing allows the roots and mushrooms to fully release their beneficial compounds and rich flavor.</p>
-            </div-->
+           
             <div class="process-box"><img src="images/brew-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
               src="images/pour.png" loading="lazy" alt="" class="process-icon" />
             <h5>Customize your experience</h5>
@@ -888,6 +937,7 @@
       src="images/banner-coffee-beans-right.png" loading="lazy" alt="" class="section-bottom-beans" /><img
       src="images/sections-beans.png" loading="lazy" alt="" class="sction-top-beans" />
   </div>
+-->
   <div id="testimonials" class="testimonials">
     <div class="main-content testimonials-content">
       <div class="testimonials-wrapper">
@@ -1099,25 +1149,21 @@
           
           <a href="https://instagram.com/nauty.elixirs" target="_blank" class="social-card animate-fade-in">
             <img src="images/insta.jpg" alt="Instagram" class="social-icon"/>
-      
             <p>@nauty.elixirs</p>
           </a>
 
           <a href="https://facebook.com/nautyelixirs" target="_blank" class="social-card animate-fade-in" style="animation-delay: 0.2s">
             <img src="images/fb.png" alt="Facebook" class="social-icon"/>
-           
             <p>@nautyelixirs</p>
           </a>
 
           <a href="https://twitter.com/nautyelixirs" target="_blank" class="social-card animate-fade-in" style="animation-delay: 0.4s">
             <img src="images/x.png" alt="Twitter" class="social-icon"/>
-           
             <p>@nautyelixirs</p>
           </a>
 
           <a href="https://linkedin.com/company/nauty-elixirs" target="_blank" class="social-card animate-fade-in" style="animation-delay: 0.6s">
             <img src="images/linkedin.jpg" alt="LinkedIn" class="social-icon"/>
-           
             <p>Nauty Elixirs</p>
           </a>
         </div>
@@ -1127,66 +1173,125 @@
 
   <style>
   .social-media-section {
-    padding: 60px 20px;
+    padding: 40px 20px;
     background-color: #F5F1EB;
   }
 
-  .social-heading {
+  .social-wrapper {
     text-align: center;
-    margin-bottom: 40px;
+  }
+
+  .social-heading {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     color: #594A3C;
   }
 
   .social-cards {
     display: flex;
-    gap: 25px;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
   }
 
   .social-card {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 200px;
     text-align: center;
-    text-decoration: none;
-    color: #594A3C;
-    transition: transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
   }
 
   .social-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
 
   .social-icon {
     width: 50px;
     height: 50px;
-    margin-bottom: 15px;
-  }
-
-  .social-card h4 {
-    margin: 10px 0;
-    color: #333;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .social-card p {
-    color: #666;
-    font-size: 14px;
+    font-size: 1rem;
+    color: #333;
     margin: 0;
   }
 
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease forwards;
+  @media (max-width: 768px) {
+    .social-card {
+      width: 120px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .social-card p {
+      font-size: 0.9rem;
+    }
+  }
+  </style>
+
+  <div id="retail-card" class="retail-card-section">
+    <div class="retail-card animate-slide-in">
+      <h3 class="retail-heading">Partner with Nauty Elixirs</h3>
+      <p class="retail-text">Ready to bring the magic of Nauty Elixirs to your retail outlet? Let’s brew something amazing together! Drop us a line at <a href="mailto:hello@nautyelixirs.ca" class="retail-link">hello@nautielixirs.ca</a>, and we’ll get back to you faster than you can say “caffeine-free bliss.”</p>
+    </div>
+  </div>
+
+  <style>
+  .retail-card-section {
+    padding: 40px 20px;
+    background-color: #F5F1EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  @keyframes fadeIn {
+  .retail-card {
+    background: #C15B3E;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 800px;
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideIn 1s ease forwards;
+  }
+
+  .retail-heading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .retail-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .retail-link {
+    color: #FFD7C2;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .retail-link:hover {
+    color: #FFE5D0;
+  }
+
+  @keyframes slideIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(50px);
     }
     to {
       opacity: 1;
@@ -1195,30 +1300,31 @@
   }
 
   @media (max-width: 768px) {
-    .social-cards {
-      gap: 15px;
+    .retail-card {
+      padding: 20px;
     }
-    
-    .social-card {
-      width: calc(50% - 15px);
-      padding: 15px;
-    }
-  }
 
-  @media (max-width: 480px) {
-    .social-card {
-      width: 100%;
+    .retail-heading {
+      font-size: 1.5rem;
+    }
+
+    .retail-text {
+      font-size: 0.9rem;
     }
   }
-  </style></a>
+  </style>
   <div class="footer">
     
       
       <div class="footer-bottom"><img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo" />
-        <div class="footer-links"><a href="/terms-conditions" class="footer-link">Terms &amp; Conditions</a><a
-            href="/privacy-policy" class="footer-link">Privacy Policy</a>
-          <p class="footer-paragraph">©Sandra 2025 | Powered by <a href="https://www.ekasmin.com" target="_blank">Ekasmin</a></p>
+        <div class="footer-links" style="text-align: center; margin-top: 20px;">
+          <a href="tnc.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Terms of Services</a>
+          <a href="privacy.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Privacy Policy</a>
         </div>
+        <p class="footer-paragraph" style="color: #594A3C; font-size: 0.9rem; margin-top: 10px; text-align: center;">
+          ©Sandra 2025 | Powered by 
+          <a href="https://ekasmin.com/" target="_blank" style="color: #C15B3E; text-decoration: underline; font-weight: bold;">Ekasmin</a>
+        </p>
       </div>
     </div>
   </div>

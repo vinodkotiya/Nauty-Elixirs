@@ -70,11 +70,12 @@
         <nav id="nav" class="nav">
           <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="https://shop.nautyelixirs.com" class="nav-link">Shop</a></li>
-            <li><a href="wholesale.html" class="nav-link">Wholesale</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-           
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="https://shop.nautyelixirs.ca" class="nav-link">Shop</a></li>
+            <li><a href="wholesale.html" class="nav-link active">Wholesale</a></li>
+            <li><a href="about.html" class="nav-link ">About</a></li>
+            <li><a href="faq.html" class="nav-link">FAQs</a></li>
+            <li><a href="wellness.html" class="nav-link">Wellness Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -82,398 +83,351 @@
   </header>
 
   <style>
-  .header {
-    position: fixed;
-    top: 0px; /* Added top margin */
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-  }
-
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-img {
-    height: 80px;
-    transition: height 0.3s ease;
-  }
-
-  .header.sticky .logo-img {
-    height: 50px;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-link {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .nav-link:hover {
-    color: #C15B3E;
-  }
-
-  .menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-right: 1rem; /* Added margin */
-    position: relative;
-    z-index: 100;
-  }
-
-  .menu-icon,
-  .menu-icon::before,
-  .menu-icon::after {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #333;
-    transition: all 0.3s ease;
-  }
-
-  .menu-icon::before,
-  .menu-icon::after {
-    content: '';
-    position: absolute;
-  }
-
-  .menu-icon::before {
-    top: -6px;
-  }
-
-  .menu-icon::after {
-    bottom: -6px;
-  }
-
-  .menu-btn.active .menu-icon {
-    background: transparent;
-  }
-
-  .menu-btn.active .menu-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-  }
-
-  .menu-btn.active .menu-icon::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-  }
-
-  @media (max-width: 768px) {
     .header {
-      top: 0px; /* Adjusted for mobile */
-    }
-
-    .menu-btn {
-      display: block;
-      order: -1; /* Move to the left */
-    }
-
-    .nav-wrapper {
-      flex-direction: row-reverse; /* Reverse order */
-    }
-
-    .nav {
       position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.98);
-      padding: 2rem 2rem 2rem;
-      transition: right 0.3s ease;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+      top: 0px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
       backdrop-filter: blur(5px);
     }
 
-    .nav.active {
-      right: 0;
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 120px;
+      transition: height 1s ease;
+    }
+
+    .header.sticky .logo-img {
+      height: 70px;
     }
 
     .nav-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-  }
+
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #C15B3E;
+    }
+
+    .nav-link.active {
+      color: #C15B3E;
+      font-weight: bold;
+      border-bottom: 2px solid #C15B3E;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #333;
+      transition: all 0.3s ease;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      content: '';
+      position: absolute;
+    }
+
+    .menu-icon::before {
+      top: -6px;
+    }
+
+    .menu-icon::after {
+      bottom: -6px;
+    }
+
+    .menu-btn.active .menu-icon {
+      background: transparent;
+    }
+
+    .menu-btn.active .menu-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .menu-btn.active .menu-icon::after {
+      transform: rotate(-45deg);
+      bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        top: 0px;
+      }
+
+      .menu-btn {
+        display: block;
+        order: -1;
+      }
+
+      .nav-wrapper {
+        flex-direction: row-reverse;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2rem 2rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        backdrop-filter: blur(5px);
+      }
+
+      .nav.active {
+        right: 0;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+    }
   </style>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('header');
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.getElementById('nav');
-    
-    // Add padding to body equal to header height plus top margin
-    function updateBodyPadding() {
-      document.body.style.paddingTop = (header.offsetHeight + 15) + 'px';
-    }
-    
-    // Update on load
-    updateBodyPadding();
-    
-    // Update on window resize
-    window.addEventListener('resize', updateBodyPadding);
-    
-    // Handle scroll
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) { // Increased scroll threshold
-        header.classList.add('sticky');
-      } else {
-        header.classList.remove('sticky');
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('header');
+      const menuBtn = document.getElementById('menuBtn');
+      const nav = document.getElementById('nav');
+      
+      function updateBodyPadding() {
+        document.body.style.paddingTop = (header.offsetHeight + 15) + 'px';
       }
-    });
-    
-    // Toggle mobile menu
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      nav.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!header.contains(e.target)) {
-        menuBtn.classList.remove('active');
-        nav.classList.remove('active');
-      }
-    });
-    
-    // Close mobile menu when clicking a link
-    nav.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        nav.classList.remove('active');
+      
+      updateBodyPadding();
+      window.addEventListener('resize', updateBodyPadding);
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
+      });
+      
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+      
+      document.addEventListener('click', (e) => {
+        if (!header.contains(e.target)) {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('active');
+        }
+      });
+      
+      nav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('active');
+        });
       });
     });
-  });
   </script>
+
+ 
+ 
  
  <div class="footer">
   <div class="main-content footer-content">
     <div class="footer-wrapper">
       <div class="footer-top">
-        <h2><span class="footer-heading">Quality products sourced globally.</span></h2><a
-          data-w-id="fa74afdd-0bef-4e95-92d8-13ea1790aab2" href="#" class="blue-button w-inline-block">
-          <div>Contact us today</div>
-          <div class="button-circle"></div>
-        </a>
+        <h2><span class="footer-heading">Quality products sourced globally.</span></h2><div id="retail-card" class="retail-card-section">
+          <div class="retail-card animate-slide-in">
+            <h3 class="retail-heading">Partner with Nauty Elixirs</h3>
+            <p class="retail-text">Ready to bring the magic of Nauty Elixirs to your retail outlet? Let’s brew something amazing together! Drop us a line at <a href="mailto:hello@nautyelixirs.ca" class="retail-link">hello@nautielixirs.ca</a>, and we’ll get back to you faster than you can say “caffeine-free bliss.”</p>
+          </div>
+        </div>
+      
+        <style>
+        .retail-card-section {
+          padding: 40px 20px;
+          background-color: #F5F1EB;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .retail-card {
+          background: #C15B3E;
+          color: white;
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+          max-width: 800px;
+          text-align: center;
+          transform: translateY(50px);
+          opacity: 0;
+          animation: slideIn 1s ease forwards;
+        }
+      
+        .retail-heading {
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+        }
+      
+        .retail-text {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+      
+        .retail-link {
+          color: #FFD7C2;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      
+        .retail-link:hover {
+          color: #FFE5D0;
+        }
+      
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        @media (max-width: 768px) {
+          .retail-card {
+            padding: 20px;
+          }
+      
+          .retail-heading {
+            font-size: 1.5rem;
+          }
+      
+          .retail-text {
+            font-size: 0.9rem;
+          }
+        }
+        </style>
       </div>
     </div>
     
    
   </div>
 </div>
+
   <div class="wholesale-section">
-    <div class="wholesale-hero"></div>
-      <h3>Wholesale Partners</h3>
-      <p>Bring the Nauty experience to your customers. We partner with cafés, wellness centers, and retail locations that share our values.</p>
+    <div class="wholesale-hero">
+      <h1>Why Partner with Nauty Elixirs?</h1>
+      <p>Elevate your business with our premium herbal coffee alternatives. Crafted with care, our blends promise an unforgettable experience for your customers while supporting sustainable practices.</p>
     </div>
 
     <div class="business-types">
       <div class="business-card">
-        <i class="fas fa-coffee"></i>
-        <h3>Cafés & Coffee Shops</h3>
-        <p>Expand your menu with a premium herbal option that appeals to health-conscious customers.</p>
+        <i class="fas fa-leaf"></i>
+        <h3>Uncompromising Quality</h3>
+        <p>We source only the finest organic ingredients, ensuring every sip delivers exceptional flavor and aroma.</p>
       </div>
       <div class="business-card">
-        <i class="fas fa-spa"></i>
-        <h3>Wellness Centers & Spas</h3>
-        <p>Offer a nourishing beverage that aligns with your wellness philosophy.</p>
+        <i class="fas fa-mug-hot"></i>
+        <h3>Diverse Product Range</h3>
+        <p>From rich, roasted blends to soothing herbal infusions, our collection caters to every taste and wellness goal.</p>
       </div>
       <div class="business-card">
-        <i class="fas fa-store"></i>
-        <h3>Health Food Stores</h3>
-        <p>Stock a product that meets the growing demand for natural coffee alternatives.</p>
+        <i class="fas fa-flask"></i>
+        <h3>Artisan Craftsmanship</h3>
+        <p>Our blends are meticulously crafted, combining traditional ingredients with innovative techniques for a unique experience.</p>
       </div>
       <div class="business-card">
-        <i class="fas fa-hotel"></i>
-        <h3>Hotels & Hospitality</h3>
-        <p>Elevate your guest experience with a unique, locally crafted beverage option.</p>
+        <i class="fas fa-globe"></i>
+        <h3>Eco-Friendly Practices</h3>
+        <p>We prioritize sustainability with biodegradable packaging and ethical sourcing practices.</p>
       </div>
     </div>
 
     <div class="program-benefits">
-      <h2>Our Wholesale Program</h2>
+      <h2>Benefits of Partnering with Us</h2>
       <div class="benefits-grid">
         <div class="benefit">
           <i class="fas fa-tags"></i>
-          <h4>Competitive Pricing</h4>
-          <p>Attractive margins to support your business</p>
+          <h4>Exclusive Wholesale Pricing</h4>
+          <p>Enjoy competitive pricing that supports your business while delivering value to your customers.</p>
         </div>
         <div class="benefit">
-          <i class="fas fa-box"></i>
-          <h4>Flexible Minimums</h4>
-          <p>Options for businesses of all sizes</p>
+          <i class="fas fa-book"></i>
+          <h4>Educational Resources</h4>
+          <p>Engage your customers with approachable content on preparation techniques and product benefits.</p>
         </div>
         <div class="benefit">
-          <i class="fas fa-ad"></i>
-          <h4>Marketing Support</h4>
-          <p>Beautiful display materials and product education</p>
+          <i class="fas fa-store"></i>
+          <h4>Merchandising Support</h4>
+          <p>Optimize your displays with guidance on shelf placement and flexible merchandising models.</p>
         </div>
         <div class="benefit">
-          <i class="fas fa-graduation-cap"></i>
-          <h4>Staff Training</h4>
-          <p>We'll ensure your team knows how to prepare and present our elixirs</p>
+          <i class="fas fa-cogs"></i>
+          <h4>Custom Orders</h4>
+          <p>Tailor your offerings to suit your customer demographics with exclusive selections.</p>
         </div>
         <div class="benefit">
           <i class="fas fa-shipping-fast"></i>
-          <h4>Fast Shipping</h4>
-          <p>Throughout Canada and the US</p>
+          <h4>Fast & Reliable Shipping</h4>
+          <p>Dependable delivery across Canada and the US to keep your shelves stocked and your customers happy.</p>
         </div>
       </div>
     </div>
-
-    <div class="testimonial"></div>
-      <blockquote>
-        "Adding Nauty Elixirs to our café menu has been a huge success. Our customers love having a delicious, organic option that supports their health goals."
-        <cite>— Coastal Café, Vancouver</cite>
-      </blockquote>
+    <div class="quote-section">
+   
+      <div loading="lazy" alt="" class="quote-wrapper reveal fade-in-right">
+        <p class="paragraph-big margin-bottom-small"><em> "Partnering with Nauty Elixirs has elevated our offerings. Our customers love the quality and unique blends, and we appreciate the support and resources provided."</em></p>
+        <p class="blue-text no-margin">— Green Leaf Wellness, Toronto</p>
+      </div>
+      
     </div>
-  </div>
-
-  <style>
-  .wholesale-section {
-    padding: 60px 20px;
-    color: #2C3E50; /* Deep earth tone for primary text */
-  }
-
-  .wholesale-hero {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px;
-  }
-
-  .wholesale-hero h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #D35400; /* Terracotta accent */
-  }
-
-  .wholesale-hero p {
-    font-size: 1.1rem;
-    color: #7F8C8D; /* Soft sage for secondary text */
-  }
-
-  .business-types {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 60px;
-  }
-
-  .business-card {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    padding: 25px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .business-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-  }
-
-  .business-card h3 {
-    font-size: 1.3rem;
-    color: #D35400; /* Terracotta accent */
-    margin: 15px 0;
-  }
-
-  .business-card p {
-    font-size: 0.95rem;
-    color: #7F8C8D; /* Soft sage for secondary text */
-  }
-
-  .business-card i {
-    font-size: 2rem;
-    color: #E67E22; /* Amber accent */
-  }
-
-  .program-benefits h2 {
-    font-size: 1.8rem;
-    color: #D35400; /* Terracotta accent */
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 60px;
-  }
-
-  .benefit {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .benefit h4 {
-    font-size: 1.1rem;
-    color: #2C3E50; /* Deep earth tone */
-    margin: 10px 0;
-  }
-
-  .benefit p {
-    font-size: 0.9rem;
-    color: #7F8C8D; /* Soft sage */
-  }
-
-  .testimonial {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  }
-
-  blockquote {
-    font-size: 1.1rem;
-    color: #2C3E50; /* Deep earth tone */
-    font-style: italic;
-    margin: 0;
-  }
-
-  cite {
-    display: block;
-    margin-top: 15px;
-    color: #D35400; /* Terracotta accent */
-    font-size: 0.9rem;
-  }
-  </style>
-  </div>
+   
 
   <style>
   .wholesale-section {
@@ -492,6 +446,11 @@
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #C15B3E;
+  }
+
+  .wholesale-hero p {
+    font-size: 1.2rem;
+    color: #7F8C8D;
   }
 
   .business-types {
@@ -521,6 +480,17 @@
     margin-bottom: 20px;
   }
 
+  .business-card h3 {
+    font-size: 1.3rem;
+    color: #C15B3E;
+    margin-bottom: 15px;
+  }
+
+  .business-card p {
+    font-size: 1rem;
+    color: #7F8C8D;
+  }
+
   .program-benefits {
     max-width: 1200px;
     margin: 0 auto 80px;
@@ -539,6 +509,7 @@
   }
 
   .benefit {
+    text-align: center;
     padding: 20px;
   }
 
@@ -546,6 +517,17 @@
     font-size: 2em;
     color: #8B7355;
     margin-bottom: 15px;
+  }
+
+  .benefit h4 {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin-bottom: 10px;
+  }
+
+  .benefit p {
+    font-size: 1rem;
+    color: #7F8C8D;
   }
 
   .testimonial {
@@ -708,14 +690,18 @@
   <div class="footer">
     
       
-      <div class="footer-bottom"><img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo" />
-        <div class="footer-links"><a href="/terms-conditions" class="footer-link">Terms &amp; Conditions</a><a
-            href="/privacy-policy" class="footer-link">Privacy Policy</a>
-          <p class="footer-paragraph">©Sandra 2025 | Powered by <a href="https://www.ekasmin.com" target="_blank">Ekasmin</a></p>
-        </div>
+    <div class="footer-bottom"><img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo" />
+      <div class="footer-links" style="text-align: center; margin-top: 20px;">
+        <a href="tnc.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Terms of Services</a>
+        <a href="privacy.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Privacy Policy</a>
       </div>
+      <p class="footer-paragraph" style="color: #594A3C; font-size: 0.9rem; margin-top: 10px; text-align: center;">
+        ©Sandra 2025 | Powered by 
+        <a href="https://ekasmin.com/" target="_blank" style="color: #C15B3E; text-decoration: underline; font-weight: bold;">Ekasmin</a>
+      </p>
     </div>
   </div>
+</div>
   <script src="js/jquery.js" type="text/javascript"></script>
   <script src="js/webflow-script.js" type="text/javascript"></script>
 </body>

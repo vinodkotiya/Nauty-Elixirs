@@ -70,11 +70,12 @@
         <nav id="nav" class="nav">
           <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="https://shop.nautyelixirs.com" class="nav-link">Shop</a></li>
+            <li><a href="https://shop.nautyelixirs.ca" class="nav-link">Shop</a></li>
             <li><a href="wholesale.html" class="nav-link">Wholesale</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-           
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="about.html" class="nav-link ">About</a></li>
+            <li><a href="faq.html" class="nav-link active">FAQs</a></li>
+            <li><a href="wellness.html" class="nav-link">Wellness Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -82,198 +83,232 @@
   </header>
 
   <style>
-  .header {
-    position: fixed;
-    top: 0px; /* Added top margin */
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-  }
-
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-img {
-    height: 80px;
-    transition: height 0.3s ease;
-  }
-
-  .header.sticky .logo-img {
-    height: 50px;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-link {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .nav-link:hover {
-    color: #C15B3E;
-  }
-
-  .menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-right: 1rem; /* Added margin */
-    position: relative;
-    z-index: 100;
-  }
-
-  .menu-icon,
-  .menu-icon::before,
-  .menu-icon::after {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #333;
-    transition: all 0.3s ease;
-  }
-
-  .menu-icon::before,
-  .menu-icon::after {
-    content: '';
-    position: absolute;
-  }
-
-  .menu-icon::before {
-    top: -6px;
-  }
-
-  .menu-icon::after {
-    bottom: -6px;
-  }
-
-  .menu-btn.active .menu-icon {
-    background: transparent;
-  }
-
-  .menu-btn.active .menu-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-  }
-
-  .menu-btn.active .menu-icon::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-  }
-
-  @media (max-width: 768px) {
     .header {
-      top: 0px; /* Adjusted for mobile */
-    }
-
-    .menu-btn {
-      display: block;
-      order: -1; /* Move to the left */
-    }
-
-    .nav-wrapper {
-      flex-direction: row-reverse; /* Reverse order */
-    }
-
-    .nav {
       position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.98);
-      padding: 2rem 2rem 2rem;
-      transition: right 0.3s ease;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+      top: 0px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
       backdrop-filter: blur(5px);
     }
 
-    .nav.active {
-      right: 0;
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 120px;
+      transition: height 1s ease;
+    }
+
+    .header.sticky .logo-img {
+      height: 70px;
     }
 
     .nav-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-  }
+
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #C15B3E;
+    }
+
+    .nav-link.active {
+      color: #C15B3E;
+      font-weight: bold;
+      border-bottom: 2px solid #C15B3E;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #333;
+      transition: all 0.3s ease;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      content: '';
+      position: absolute;
+    }
+
+    .menu-icon::before {
+      top: -6px;
+    }
+
+    .menu-icon::after {
+      bottom: -6px;
+    }
+
+    .menu-btn.active .menu-icon {
+      background: transparent;
+    }
+
+    .menu-btn.active .menu-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .menu-btn.active .menu-icon::after {
+      transform: rotate(-45deg);
+      bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        top: 0px;
+      }
+
+      .menu-btn {
+        display: block;
+        order: -1;
+      }
+
+      .nav-wrapper {
+        flex-direction: row-reverse;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2rem 2rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        backdrop-filter: blur(5px);
+      }
+
+      .nav.active {
+        right: 0;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+    }
   </style>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('header');
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.getElementById('nav');
-    
-    // Add padding to body equal to header height plus top margin
-    function updateBodyPadding() {
-      document.body.style.paddingTop = (header.offsetHeight + 15) + 'px';
-    }
-    
-    // Update on load
-    updateBodyPadding();
-    
-    // Update on window resize
-    window.addEventListener('resize', updateBodyPadding);
-    
-    // Handle scroll
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) { // Increased scroll threshold
-        header.classList.add('sticky');
-      } else {
-        header.classList.remove('sticky');
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('header');
+      const menuBtn = document.getElementById('menuBtn');
+      const nav = document.getElementById('nav');
+      
+      function updateBodyPadding() {
+        document.body.style.paddingTop = (header.offsetHeight + 15) + 'px';
       }
-    });
-    
-    // Toggle mobile menu
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      nav.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!header.contains(e.target)) {
-        menuBtn.classList.remove('active');
-        nav.classList.remove('active');
-      }
-    });
-    
-    // Close mobile menu when clicking a link
-    nav.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        nav.classList.remove('active');
+      
+      updateBodyPadding();
+      window.addEventListener('resize', updateBodyPadding);
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
+      });
+      
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+      
+      document.addEventListener('click', (e) => {
+        if (!header.contains(e.target)) {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('active');
+        }
+      });
+      
+      nav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('active');
+        });
       });
     });
-  });
   </script>
+
  
+ 
+ <div id="process" class="process">
+  <div class="main-content process-content">
+    <div class="process-wrapper">
+      <h4 class="margin-bottom-big">Take a look to make your perfect cup</h4>
+      <div class="process-column">
+        <div class="process-box"><img src="images/grinder.png" loading="lazy" alt="" class="process-icon" />
+          <h5>Measure your perfect <br />portion</h5>
+          <p class="no-margin">Start your ritual by measuring ½ tablespoon of our earthy elixir blend for every 8 ounces of water. This perfect ratio ensures optimal flavor extraction.</p>
+          </div>
+          <div class="process-box"><img src="images/heat-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
+            src="images/heat-watter.png" loading="lazy" alt="" class="process-icon" />
+          <h5>Heat your water mindfully</h5>
+          <p class="no-margin">Bring fresh, filtered water to a gentle boil. Pour your hot water over the measured elixir blend. Watch as the rich, dark color begins to develop, releasing earthy aromas that signal the start of your ritual</p>
+          </div>
+         
+          <div class="process-box"><img src="images/brew-arrow.png" loading="lazy" alt="" class="process-arrow" /><img
+            src="images/pour.png" loading="lazy" alt="" class="process-icon" />
+          <h5>Customize your experience</h5>
+          <p class="no-margin">After steeping, your elixir is ready to enjoy as is, or personalize it with your favorite milk alternative and natural sweetener for a comforting, coffee-like experience.</p>
+          </div>
+          <div class="process-box no-margin"><img src="images/serve-arrow.png" loading="lazy" alt=""
+            class="process-arrow" /><img src="images/serve.png" loading="lazy" alt="" class="process-icon" />
+          <h5>Mindful moments</h5>
+          <p class="no-margin">Take a moment to breathe deeply, appreciate the aromatic experience, and sip mindfully. Feel yourself becoming more grounded with each nourishing cup.</p>
+          </div>
+      </div>
+    </div>
+  </div><img src="images/banner-leaf-left.png" loading="lazy" alt="" class="section-left-leaf" /><img
+    src="images/leaf-right.png" loading="lazy" alt="" class="section-leaf-right" /><img src="images/portafilter.png"
+    loading="lazy" alt="" class="portafilter" /><img src="images/cookie.png" loading="lazy" alt=""
+    class="cookie" /><img src="images/donut.png" loading="lazy" alt="" class="donut" /><img
+    src="images/brew.png" loading="lazy" alt="" class="coffee-cup" /><img
+    src="images/banner-coffee-beans-right.png" loading="lazy" alt="" class="section-bottom-beans" /><img
+    src="images/sections-beans.png" loading="lazy" alt="" class="sction-top-beans" />
+</div>
  
   <div class="faq-section">
     <div class="main-content faq-content">
@@ -579,17 +614,21 @@
     }
   }
   </style></a>
-  <div class="footer">
+   <div class="footer">
     
       
-      <div class="footer-bottom"><img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo" />
-        <div class="footer-links"><a href="/terms-conditions" class="footer-link">Terms &amp; Conditions</a><a
-            href="/privacy-policy" class="footer-link">Privacy Policy</a>
-          <p class="footer-paragraph">©Sandra 2025 | Powered by <a href="https://www.ekasmin.com" target="_blank">Ekasmin</a></p>
-        </div>
+    <div class="footer-bottom"><img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo" />
+      <div class="footer-links" style="text-align: center; margin-top: 20px;">
+        <a href="tnc.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Terms of Services</a>
+        <a href="privacy.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Privacy Policy</a>
       </div>
+      <p class="footer-paragraph" style="color: #594A3C; font-size: 0.9rem; margin-top: 10px; text-align: center;">
+        ©Sandra 2025 | Powered by 
+        <a href="https://ekasmin.com/" target="_blank" style="color: #C15B3E; text-decoration: underline; font-weight: bold;">Ekasmin</a>
+      </p>
     </div>
   </div>
+</div>
   <script src="js/jquery.js" type="text/javascript"></script>
   <script src="js/webflow-script.js" type="text/javascript"></script>
 </body>
