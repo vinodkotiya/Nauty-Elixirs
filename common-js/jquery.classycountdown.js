@@ -143,7 +143,7 @@
         }
         
         function secondsToDHMS() {
-            const secondsInTheFuture = new Date("2025-03-31T12:00:00Z").getTime() / 1000;
+            const secondsInTheFuture = new Date("2025-04-01T07:00:00Z").getTime() / 1000;
 const secondsNow = new Date().getTime() / 1000;
 secondsLeft = Math.round(secondsInTheFuture - secondsNow);
             DaysLeft = Math.floor(secondsLeft / 86400);
