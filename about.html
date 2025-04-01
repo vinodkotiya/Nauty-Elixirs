@@ -721,21 +721,102 @@
     }
   }
   </style>
-   <div class="footer">
-    
-      
-    <div class="footer-bottom"><img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo" />
-      <div class="footer-links" style="text-align: center; margin-top: 20px;">
-        <a href="tnc.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Terms of Services</a>
-        <a href="privacy.html" class="footer-link" style="color: #C15B3E; text-decoration: none; font-weight: bold; margin: 0 10px;">Privacy Policy</a>
-      </div>
-      <p class="footer-paragraph" style="color: #594A3C; font-size: 0.9rem; margin-top: 10px; text-align: center;">
+    <div class="footer">
+      <div class="footer-bottom" style="display: flex; flex-direction: column; align-items: center;">
+        <img src="images/logo_transparent.png" loading="lazy" alt="" class="footer-logo animate-logo" style="margin: 0 auto;" />
+        <div class="footer-links animate-fade-in" style="text-align: center; margin-top: 20px;">
+        <a href="tnc.html" class="footer-link hover-effect">Terms of Services</a>
+        <a href="privacy.html" class="footer-link hover-effect">Privacy Policy</a>
+        </div>
+        <p class="footer-paragraph animate-fade-up">
         ©Sandra 2025 | Powered by 
-        <a href="https://ekasmin.com/" target="_blank" style="color: #C15B3E; text-decoration: underline; font-weight: bold;">Ekasmin</a>
-      </p>
+        <a href="https://ekasmin.com/" target="_blank" class="hover-highlight">Ekasmin</a>
+        </p>
+      </div>
+  
+      <style>
+        .animate-logo {
+          animation: float 3s ease-in-out infinite;
+        }
+  
+        .animate-fade-in {
+          opacity: 0;
+          animation: fadeIn 1s ease-out forwards;
+          animation-delay: 0.5s;
+        }
+  
+        .animate-fade-up {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeUp 1s ease-out forwards;
+          animation-delay: 1s;
+        }
+  
+        .hover-effect {
+          color: #C15B3E;
+          text-decoration: none;
+          font-weight: bold;
+          margin: 0 10px;
+          position: relative;
+          transition: all 0.3s ease;
+        }
+  
+        .hover-effect:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: -2px;
+          left: 0;
+          background: #C15B3E;
+          transition: width 0.3s ease;
+        }
+  
+        .hover-effect:hover:after {
+          width: 100%;
+        }
+  
+        .hover-highlight {
+          color: #C15B3E;
+          text-decoration: underline;
+          font-weight: bold;
+          transition: all 0.3s ease;
+        }
+  
+        .hover-highlight:hover {
+          color: #594A3C;
+          text-shadow: 0 0 8px rgba(193, 91, 62, 0.3);
+        }
+  
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+  
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+  
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+  
+        .footer-paragraph {
+          color: #594A3C;
+          font-size: 0.9rem;
+          margin-top: 10px;
+          text-align: center;
+        }
+      </style>
     </div>
-  </div>
-</div>
   <script src="js/jquery.js" type="text/javascript"></script>
   <script src="js/webflow-script.js" type="text/javascript"></script>
 </body>
