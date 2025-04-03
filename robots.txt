@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nautyelixirs.ca/sitemap.xml
+
+# Custom error handling
+ErrorDocument 404 /404.html
+ErrorDocument 200 /

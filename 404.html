@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html data-wf-page="6435285ed29de468a52c3677" data-wf-site="6435285ed29de434162c3676">
+
+<head>
+  <meta charset="utf-8" />
+  <title>404 - Page Not Found | Nauty Elixirs</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="css/webflow-style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Zilla Slab', sans-serif;
+      background-color: #F5F1EB;
+      color: #594A3C;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .error-container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .error-title {
+      font-size: 5rem;
+      color: #C15B3E;
+      margin: 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .error-message {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .error-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #C15B3E;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .error-link:hover {
+      background-color: #A1442E;
+    }
+
+    .error-animation {
+      margin-top: 30px;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .error-animation img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: spin 4s linear infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-container">
+    <h1 class="error-title">404</h1>
+    <p class="error-message">Oh no! This page seems to have taken a wellness break—just like our caffeine-free elixirs. Let's find your way back!</p>
+    <a href="index.html" class="error-link">Go Back Home</a>
+    <div class="error-animation">
+      <img src="images/logo_transparent.png" alt="Nauty Elixirs Logo" />
+    </div>
+  </div>
+</body>
+
+</html>
