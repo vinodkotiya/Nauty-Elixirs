@@ -312,7 +312,7 @@
             <style>
             @font-face {
               font-family: 'TANTangkiwood';
-              src: url('css/TAN_-_TANGKIWOODcanva.woff2') format('woff2');
+              src: url('css/pretoriaregular.woff2') format('woff2');
               font-weight: normal;
               font-style: normal;
             }
@@ -521,8 +521,8 @@
           <div class="slide">
             <div class="product-card">
               <div class="product-image-wrapper">
-                <img src="images/banner-coffe-bag.png" alt="Herbal Dark Roast" class="product-image main" onerror="this.src='images/placeholder.png';">
-                <img src="images/character-strolling.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+                <img src="images/nautyelixirs1.png" alt="Herbal Dark Roast" class="product-image main" onerror="this.src='images/nautyelixirs1.png';">
+                <img src="images/p1.jpg" alt="Character" class="product-image hover" onerror="this.src='images/p1.jpg';">
               </div>
               <h4>Dark Roast</h4>
               <p>A bold and roasty caffeine-free brew with deep, rich flavors</p>
@@ -535,8 +535,8 @@
           <div class="slide">
             <div class="product-card">
               <div class="product-image-wrapper">
-                <img src="images/banner-coffe-bag5.png" alt="Herbal Light Roast" class="product-image main" onerror="this.src='images/placeholder.png';">
-                <img src="images/character-cup.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+                <img src="images/nautyelixirs2.png" alt="Herbal Light Roast" class="product-image main" onerror="this.src='images/nautyelixirs2.png';">
+                <img src="images/p2.jpg" alt="Character" class="product-image hover" onerror="this.src='images/p3.jpg';">
               </div>
               <h4>Light Roast</h4>
               <p>A smooth and balanced caffeine-free brew with a lighter, toasty flavor.</p>
@@ -549,11 +549,11 @@
           <div class="slide">
             <div class="product-card">
               <div class="product-image-wrapper">
-                <img src="images/banner-coffe-bag6.png" alt="Evening Unwind" class="product-image main" onerror="this.src='images/placeholder.png';">
-                <img src="images/character-reading.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+                <img src="images/nautyelixirs3.png" alt="Evening Unwind" class="product-image main" onerror="this.src='images/nautyelixirs3.png';">
+                <img src="images/p3.jpg" alt="Character" class="product-image hover" onerror="this.src='images/p3.jpg';">
               </div>
               <h4>Kakoa</h4>
-              <p>A rich and naturally sweet blend with a deep, chocolate-like flavor, perfect for a cozy and caffeine-free indulgence.</p>
+              <p>A rich, naturally sweet blend, deep chocolate-like flavor, perfect for a cozy & caffeine-free indulgence.</p>
               <div class="product-footer">
                 <span class="price"></span>
                 <a href="#" class="shop-button">+ Add to Cart</a>
@@ -563,8 +563,8 @@
           <div class="slide">
             <div class="product-card">
               <div class="product-image-wrapper">
-                <img src="images/banner-coffe-bag7.png" alt="Nauty Powder Original" class="product-image main" onerror="this.src='images/placeholder.png';">
-                <img src="images/character4.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+                <img src="images/nautyelixirs4.png" alt="Nauty Powder Original" class="product-image main" onerror="this.src='images/nautyelixirs4.png';">
+                <img src="images/p4.jpg" alt="Character" class="product-image hover" onerror="this.src='images/p4.jpg';">
               </div>
               <h4>Chai</h4>
               <p>A warm, spiced, and caffeine-free herbal blend that brings the essence of traditional chai to any cup.</p>
@@ -577,8 +577,8 @@
           <div class="slide">
             <div class="product-card">
               <div class="product-image-wrapper">
-                <img src="images/banner-coffe-bag8.png" alt="Nauty Powder Spiced" class="product-image main" onerror="this.src='images/placeholder.png';">
-                <img src="images/sandra2.png" alt="Character" class="product-image hover" onerror="this.src='images/placeholder.png';">
+                <img src="images/nautyelixirs5.png" alt="Nauty Powder Spiced" class="product-image main" onerror="this.src='images/nautyelixirs5.png';">
+                <img src="images/p5.jpg" alt="Character" class="product-image hover" onerror="this.src='images/p5.jpg';">
               </div>
               <h4>Peace</h4>
               <p>A soothing adaptogenic blend designed to promote relaxation and balance. </p>
@@ -725,6 +725,7 @@
         border-radius: 50%;
         cursor: pointer;
         transition: background 0.3s ease;
+        z-index: 10; /* Ensure buttons are above other elements */
       }
 
       .slide-nav:hover {
@@ -773,74 +774,110 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const slidesWrapper = document.querySelector('.slides-wrapper');
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const dotsContainer = document.querySelector('.slide-dots');
+      const slidesWrapper = document.querySelector('.slides-wrapper');
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      const dotsContainer = document.querySelector('.slide-dots');
 
-        let currentSlide = 0;
-        let autoScrollInterval;
+      let currentSlide = 0;
+      let autoScrollInterval;
 
-        // Create dots
-        slides.forEach((_, index) => {
-          const dot = document.createElement('div');
-          dot.classList.add('dot');
-          if (index === 0) dot.classList.add('active');
-          dot.addEventListener('click', () => goToSlide(index));
-          dotsContainer.appendChild(dot);
+      // Clone slides for infinite loop
+      const slidesPerView = window.innerWidth <= 768 ? 1 : 3; // Show 1 slide on small screens, 3 on larger screens
+      const slideWidth = 100 / slidesPerView; // Calculate slide width
+      const totalSlides = slides.length;
+      for (let i = 0; i < slidesPerView; i++) {
+        slidesWrapper.appendChild(slides[i].cloneNode(true));
+        slidesWrapper.insertBefore(slides[totalSlides - 1 - i].cloneNode(true), slidesWrapper.firstChild);
+      }
+
+      slidesWrapper.style.transform = `translateX(-${slideWidth}%)`;
+      slidesWrapper.style.transform = `translateX(-${100 / slidesPerView}%)`;
+
+      // Create dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateDots() {
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
         });
+      }
 
-        function updateDots() {
-          document.querySelectorAll('.dot').forEach((dot, index) => {
-          const slidesPerView = window.innerWidth <= 768 ? 1 : 3; // Show 1 slide on small screens, 3 on larger screens
-          slidesWrapper.style.transform = `translateX(-${currentSlide * (100 / slidesPerView)}%)`;
-          });
+      function goToSlide(index) {
+        currentSlide = index;
+        slidesWrapper.style.transform = `translateX(-${(currentSlide + slidesPerView) * slideWidth}%)`;
+        slidesWrapper.style.transform = `translateX(-${(currentSlide + slidesPerView) * (100 / slidesPerView)}%)`;
+        updateDots();
+      }
+
+      function nextSlide() {
+        currentSlide++;
+        slidesWrapper.style.transition = 'transform 0.5s ease';
+        slidesWrapper.style.transform = `translateX(-${(currentSlide + slidesPerView) * (100 / slidesPerView)}%)`;
+
+        if (currentSlide >= totalSlides) {
+        setTimeout(() => {
+          slidesWrapper.style.transition = 'none';
+          currentSlide = 0;
+          slidesWrapper.style.transform = `translateX(-${(currentSlide + slidesPerView) * (100 / slidesPerView)}%)`;
+        }, 500);
         }
+        updateDots();
+      }
 
-        function goToSlide(index) {
-          currentSlide = index;
-          slidesWrapper.style.transform = `translateX(-${currentSlide * (100 / 3)}%)`; // Adjust for 3 slides visible
-          updateDots();
+      function prevSlide() {
+        currentSlide--;
+        slidesWrapper.style.transition = 'transform 0.5s ease';
+        slidesWrapper.style.transform = `translateX(-${(currentSlide + slidesPerView) * (100 / slidesPerView)}%)`;
+
+        if (currentSlide < 0) {
+        setTimeout(() => {
+          slidesWrapper.style.transition = 'none';
+          currentSlide = totalSlides - 1;
+          slidesWrapper.style.transform = `translateX(-${(currentSlide + slidesPerView) * (100 / slidesPerView)}%)`;
+        }, 500);
         }
+        updateDots();
+      }
 
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % slides.length;
-          goToSlide(currentSlide);
-        }
+      // Auto scroll
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(nextSlide, 5000);
+      }
 
-        function prevSlide() {
-          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-          goToSlide(currentSlide);
-        }
+      function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+      }
 
-        // Auto scroll
-        function startAutoScroll() {
-          autoScrollInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopAutoScroll() {
-          clearInterval(autoScrollInterval);
-        }
-
-        // Event listeners
-        prevBtn.addEventListener('click', () => {
-          prevSlide();
-          stopAutoScroll();
-          startAutoScroll();
-        });
-
-        nextBtn.addEventListener('click', () => {
-          nextSlide();
-          stopAutoScroll();
-          startAutoScroll();
-        });
-
-        slidesWrapper.addEventListener('mouseenter', stopAutoScroll);
-        slidesWrapper.addEventListener('mouseleave', startAutoScroll);
-
-        // Start auto scroll
+      // Event listeners
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoScroll();
         startAutoScroll();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoScroll();
+        startAutoScroll();
+      });
+
+      slidesWrapper.addEventListener('mouseenter', stopAutoScroll);
+      slidesWrapper.addEventListener('mouseleave', startAutoScroll);
+
+      // Start auto scroll
+      startAutoScroll();
       });
     </script>
   </div>
@@ -849,7 +886,7 @@
       <div class="story-wrapper" style="display: flex; align-items: stretch; flex-direction: row; gap: 20px; padding: 20px;">
         <div class="story-text" style="flex: 1; padding: 20px; display: flex; flex-direction: column; justify-content: center; min-width: 300px;">
           <p class="blue-text">The Nauty Story</p>
-          <h3>CRAFTED WITH INTENTION</h3>
+            <h4 style="font-family: 'TANTangkiwood', serif;">CRAFTED WITH INTENTION</h4>
           <p class="margin-bottom-small">Nauty Elixirs began its journey on the rugged shores of Salt Spring Island, BC, where founder Sandra discovered the transformative power of herbal alternatives. Inspired by the island's raw beauty and deep connection to the land, she envisioned creating more than just a beverage—she dreamed of crafting a ritual that would nurture both body and spirit.</p>
           <p class="margin-bottom-small">Each batch is meticulously handcrafted using certified organic herbs and botanicals, thoughtfully sourced from sustainable farms. Sandra's process combines ancient wisdom with modern innovation, carefully selecting ingredients like roasted chicory root, dandelion, and chaga mushrooms not only for their robust flavors but also for their natural wellness benefits.</p>
           <p class="no-margin">The brand's motto "Feel Naughty, Stay Grounded" reflects Sandra's belief that indulgence and wellness can coexist harmoniously. Through Nauty Elixirs, she invites others to join her journey toward mindful living, offering a unique blend that celebrates nature's bounty while maintaining an unwavering commitment to quality and authenticity.</p>
@@ -964,7 +1001,7 @@
   <div id="testimonials" class="testimonials">
     <div class="main-content testimonials-content">
       <div class="testimonials-wrapper">
-        <h3 class="testimonials-heading">What Our Community Says</h3>
+        <h3 class="testimonials-heading" style="font-family: 'TANTangkiwood', serif; text-shadow: 2px 2px 5px rgb(20, 20, 20);">What Our Community Says</h3>
         <div class="testimonial-cards">
           <div class="testimonial-card animate-fade-in">
             <div class="quote-icon">"</div>
@@ -1167,7 +1204,7 @@
   <div id="social-media" class="social-media-section">
     <div class="main-content social-content">
       <div class="social-wrapper">
-        <h3 class="social-heading">Join Our Community</h3>
+        <h3 class="social-heading" style="font-family: 'TANTangkiwood', serif;">Join Our Community</h3>
         <p class="social-subtitle">Follow us for daily wellness inspiration and behind-the-scenes glimpses</p>
         
         <div class="social-cards">
@@ -1319,7 +1356,7 @@
           <div class="retail-icon">
             <i class="fas fa-handshake fa-3x"></i>
           </div>
-          <h3 class="retail-heading">Brew Together, Grow Together</h3>
+            <h3 class="retail-heading" style="font-family: 'TANTangkiwood', serif; text-shadow: 2px 2px 5px white;">Brew Together, Grow Together</h3>
           <p class="retail-text">
             Join us in revolutionizing the wellness beverage industry. Partner with Nauty Elixirs and bring our artisanal, caffeine-free blends to your conscious community and retail outlets.
           </p>
