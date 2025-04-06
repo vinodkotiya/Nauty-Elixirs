@@ -16,13 +16,7 @@
             padding: 20px;
         }
         canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            z-index: 9999;
+            
         }
     </style>
 </head>
@@ -34,7 +28,8 @@
         <p>Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci.</p>
         <p>Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
     </div>
-    <canvas id="matrixCanvas"></canvas>
+    <canvas id="matrixCanvas" style = "position: fixed;     top: 0;    left: 0;    width: 100%;    height: 100%;    display: none;
+    z-index: 9999;"></canvas>
     <script>
         const canvas = document.getElementById('matrixCanvas');
         const ctx = canvas.getContext('2d');
@@ -46,9 +41,27 @@
         const columns = Math.floor(canvas.width / fontSize);
         const drops = Array(columns).fill(1);
 
-        const specialTexts = ["Sandra", "Nauty Elixirs"];
+        const specialTexts = ["Nauty Elixirs", "Sandra, CEO & Founder"];
+        const additionalTexts = [
+            "Feel Naughty, Stay Grounded",
+            "Salt Spring Island, BC",
+            "Herbal Alternatives",
+            "Mindful Living",
+            "Roasted Chicory Root",
+            "Dandelion",
+            "Chaga Mushrooms",
+            "Nature's Bounty",
+            "Certified Organic Herbs",
+            "Sustainable Farms",
+            "Ancient Wisdom",
+            "Modern Innovation",
+            "Nurture Body and Spirit"
+        ];
         let fadeText = null;
         let fadeAlpha = 0;
+        let specialIndex = 0;
+        let additionalIndex = 0;
+        let displayingSpecial = true;
 
         const draw = () => {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -58,30 +71,30 @@
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {
-                const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-                const x = i * fontSize;
-                const y = drops[i] * fontSize;
+            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
 
-                ctx.fillText(text, x, y);
+            ctx.fillText(text, x, y);
 
-                if (y > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-
-                drops[i]++;
+            if (y > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
             }
 
-            // Draw special text if available
-            if (fadeText) {
-                ctx.fillStyle = `rgba(0, 255, 0, ${fadeAlpha})`;
-                ctx.font = `48px monospace`;
-                const textWidth = ctx.measureText(fadeText).width;
-                ctx.fillText(fadeText, (canvas.width - textWidth) / 2, canvas.height / 2);
+            drops[i]++;
+            }
 
-                fadeAlpha -= 0.01; // Gradually fade out
-                if (fadeAlpha <= 0) {
-                    fadeText = null; // Reset after fading
-                }
+            // Draw special or additional text if available
+            if (fadeText) {
+            ctx.fillStyle = `rgba(0, 255, 0, ${fadeAlpha})`;
+            ctx.font = `48px monospace`;
+            const textWidth = ctx.measureText(fadeText).width;
+            ctx.fillText(fadeText, (canvas.width - textWidth) / 2, canvas.height / 2);
+
+            fadeAlpha -= 0.01; // Gradually fade out
+            if (fadeAlpha <= 0) {
+                fadeText = null; // Reset after fading
+            }
             }
         };
 
@@ -90,31 +103,49 @@
             canvas.style.display = 'block';
             intervalId = setInterval(draw, 50);
 
-            // Randomly display special text
+            // Sequentially display special text first, then all additional text randomly
             setInterval(() => {
-                if (!fadeText) {
-                    fadeText = specialTexts[Math.floor(Math.random() * specialTexts.length)];
-                    fadeAlpha = 1; // Reset alpha for new text
+            if (!fadeText) {
+                if (displayingSpecial) {
+                if (specialIndex < specialTexts.length) {
+                    fadeText = specialTexts[specialIndex];
+                    specialIndex++;
+                } else {
+                    displayingSpecial = false; // Switch to additional texts
+                    additionalIndex = 0; // Reset additional index
                 }
+                } else {
+                if (additionalIndex < additionalTexts.length) {
+                    fadeText = additionalTexts[additionalIndex];
+                    additionalIndex++;
+                } else {
+                    displayingSpecial = true; // Switch back to special texts
+                    specialIndex = 0; // Reset special index
+                }
+                }
+                fadeAlpha = 1; // Reset alpha for new text
+            }
             }, 5000); // Every 5 seconds
 
             window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
             });
         };
 
-        // Detect "belle" keyboard sequence
+        // Detect "belle" or "sandra" keyboard sequence
         let inputSequence = '';
-        const targetSequence = 'belle';
+        const targetSequences = ['belle', 'sandra'];
 
         window.addEventListener('keydown', (event) => {
             inputSequence += event.key.toLowerCase();
+            for (const targetSequence of targetSequences) {
             if (inputSequence.endsWith(targetSequence)) {
                 startMatrixEffect();
             }
-            if (inputSequence.length > targetSequence.length) {
-                inputSequence = inputSequence.slice(-targetSequence.length);
+            }
+            if (inputSequence.length > Math.max(...targetSequences.map(seq => seq.length))) {
+            inputSequence = inputSequence.slice(-Math.max(...targetSequences.map(seq => seq.length)));
             }
         });
     </script>

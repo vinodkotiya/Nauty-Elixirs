@@ -82,6 +82,128 @@
 </head>
 
 <body>
+  <canvas id="matrixCanvas" style = "position: fixed;     top: 0;    left: 0;    width: 100%;    height: 100%;    display: none;
+    z-index: 9999;"></canvas>
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const fontSize = 16;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+
+        const specialTexts = ["Nauty Elixirs", "Sandra, CEO & Founder"];
+        const additionalTexts = [
+            "Feel Naughty, Stay Grounded",
+            "Salt Spring Island, BC",
+            "Revolutionizing Beverage Industry",
+            "Herbal Alternatives",
+            "Mindful Living",
+            "Roasted Chicory Root",
+            "Dandelion",
+            "Chaga Mushrooms",
+            "Nature's Bounty",
+            "Certified Organic Herbs",
+            "Sustainable Farms",
+            "Ancient Wisdom",
+            "Modern Innovation",
+            "Nurture Body and Spirit"
+        ];
+        let fadeText = null;
+        let fadeAlpha = 0;
+        let specialIndex = 0;
+        let additionalIndex = 0;
+        let displayingSpecial = true;
+
+        const draw = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = 'lime';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
+
+            ctx.fillText(text, x, y);
+
+            if (y > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+
+            drops[i]++;
+            }
+
+            // Draw special or additional text if available
+            if (fadeText) {
+            ctx.fillStyle = `rgba(0, 255, 0, ${fadeAlpha})`;
+            ctx.font = `48px monospace`;
+            const textWidth = ctx.measureText(fadeText).width;
+            ctx.fillText(fadeText, (canvas.width - textWidth) / 2, canvas.height / 2);
+
+            fadeAlpha -= 0.01; // Gradually fade out
+            if (fadeAlpha <= 0) {
+                fadeText = null; // Reset after fading
+            }
+            }
+        };
+
+        let intervalId;
+        const startMatrixEffect = () => {
+            canvas.style.display = 'block';
+            intervalId = setInterval(draw, 50);
+
+            // Sequentially display special text first, then all additional text randomly
+            setInterval(() => {
+            if (!fadeText) {
+                if (displayingSpecial) {
+                if (specialIndex < specialTexts.length) {
+                    fadeText = specialTexts[specialIndex];
+                    specialIndex++;
+                } else {
+                    displayingSpecial = false; // Switch to additional texts
+                    additionalIndex = 0; // Reset additional index
+                }
+                } else {
+                if (additionalIndex < additionalTexts.length) {
+                    fadeText = additionalTexts[additionalIndex];
+                    additionalIndex++;
+                } else {
+                    displayingSpecial = true; // Switch back to special texts
+                    specialIndex = 0; // Reset special index
+                }
+                }
+                fadeAlpha = 1; // Reset alpha for new text
+            }
+            }, 5000); // Every 5 seconds
+
+            window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            });
+        };
+
+        // Detect "belle" or "sandra" keyboard sequence
+        let inputSequence = '';
+        const targetSequences = ['belle', 'sandra'];
+
+        window.addEventListener('keydown', (event) => {
+            inputSequence += event.key.toLowerCase();
+            for (const targetSequence of targetSequences) {
+            if (inputSequence.endsWith(targetSequence)) {
+                startMatrixEffect();
+            }
+            }
+            if (inputSequence.length > Math.max(...targetSequences.map(seq => seq.length))) {
+            inputSequence = inputSequence.slice(-Math.max(...targetSequences.map(seq => seq.length)));
+            }
+        });
+    </script>
   <header id="header" class="header">
     <div class="header-container">
       <div class="logo">
@@ -545,7 +667,7 @@
               <p>A smooth and balanced caffeine-free brew with a lighter, toasty flavor.</p>
               <div class="product-footer">
                 <span class="price"></span>
-                <a href="#" class="shop-button">+ Add to Cart</a>
+                <a href="https://shop.nautyelixirs.ca/product/herbal-dark-roast/" target="_blank" class="shop-button">+ Add to Cart</a>
               </div>
             </div>
           </div>
@@ -559,7 +681,7 @@
               <p>A rich, naturally sweet blend, deep chocolate-like flavor, perfect for a cozy & caffeine-free indulgence.</p>
               <div class="product-footer">
                 <span class="price"></span>
-                <a href="#" class="shop-button">+ Add to Cart</a>
+                <a href="https://shop.nautyelixirs.ca/product/kakoa/" target="_blank" class="shop-button">+ Add to Cart</a>
               </div>
             </div>
           </div>
@@ -573,7 +695,7 @@
               <p>A warm, spiced, and caffeine-free herbal blend that brings the essence of traditional chai to any cup.</p>
               <div class="product-footer">
                 <span class="price"></span>
-                <a href="#" class="shop-button">+ Add to Cart</a>
+                <a href="https://shop.nautyelixirs.ca/product/herbal-chai-spice-blend/" target="_blank" class="shop-button">+ Add to Cart</a>
               </div>
             </div>
           </div>
@@ -587,7 +709,7 @@
               <p>A soothing adaptogenic blend designed to promote relaxation and balance. </p>
               <div class="product-footer">
                 <span class="price"></span>
-                <a href="#" class="shop-button">+ Add to Cart</a>
+                <a href="https://shop.nautyelixirs.ca/product/peace-calming-adaptogenic-blend/" target="_blank" class="shop-button">+ Add to Cart</a>
               </div>
             </div>
           </div>
@@ -889,29 +1011,71 @@
       <div class="story-wrapper" style="display: flex; align-items: stretch; flex-direction: row; gap: 20px; padding: 20px;">
         <div class="story-text" style="flex: 1; padding: 20px; display: flex; flex-direction: column; justify-content: center; min-width: 300px;">
           <p class="blue-text">The Nauty Story</p>
-            <h4 style="font-family: 'TANTangkiwood', serif;">CRAFTED WITH INTENTION</h4>
+          <h4 style="font-family: 'TANTangkiwood', serif;">CRAFTED WITH INTENTION</h4>
           <p class="margin-bottom-small">Nauty Elixirs began its journey on the rugged shores of Salt Spring Island, BC, where founder Sandra discovered the transformative power of herbal alternatives. Inspired by the island's raw beauty and deep connection to the land, she envisioned creating more than just a beverage—she dreamed of crafting a ritual that would nurture both body and spirit.</p>
           <p class="margin-bottom-small">Each batch is meticulously handcrafted using certified organic herbs and botanicals, thoughtfully sourced from sustainable farms. Sandra's process combines ancient wisdom with modern innovation, carefully selecting ingredients like roasted chicory root, dandelion, and chaga mushrooms not only for their robust flavors but also for their natural wellness benefits.</p>
           <p class="no-margin">The brand's motto "Feel Naughty, Stay Grounded" reflects Sandra's belief that indulgence and wellness can coexist harmoniously. Through Nauty Elixirs, she invites others to join her journey toward mindful living, offering a unique blend that celebrates nature's bounty while maintaining an unwavering commitment to quality and authenticity.</p>
         </div>
         <div class="story-image-container" style="flex: 1; position: relative; min-width: 300px;">
-            <video id="storyVideo" style="display: none; width: 100%; height: auto;" controls autoplay playsinline muted>
-              <source src="images/sandradrift.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <img id="storyImage" src="images/sandra3.png" loading="lazy" alt=""
+          <video id="storyVideo" style="display: none; width: 100%; height: auto;" controls autoplay playsinline muted>
+            <source src="images/sandradrift.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <img id="storyImage" src="images/sandra3.png" loading="lazy" alt=""
             sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, 40vw"
             srcset="images/sandra3.png 500w, images/sandra3.png 508w" 
             class="story-image" 
-            style="width: 100%; height: auto; object-fit: contain; margin: 20px 0;" /> </div>
-          <img src="images/corner-left.png" loading="lazy" alt="" class="top-left-corner" 
-            style="position: absolute; top: -30px; left: -30px; width: 100px; height: auto;" />
-          <img src="images/corner-right.png" loading="lazy" alt="" class="bottom-right-corner" 
-            style="position: absolute; bottom: -40px; right: -40px; width: 100px; height: auto;" />
+            style="width: 100%; height: auto; object-fit: contain; margin: 20px 0;" />
+          <div class="animated-card">
+            <p>Sandra, CEO & Founder</p>
+          </div>
         </div>
+        <img src="images/corner-left.png" loading="lazy" alt="" class="top-left-corner" 
+          style="position: absolute; top: -30px; left: -30px; width: 100px; height: auto;" />
+        <img src="images/corner-right.png" loading="lazy" alt="" class="bottom-right-corner" 
+          style="position: absolute; bottom: -40px; right: -40px; width: 100px; height: auto;" />
       </div>
     </div>
   </div>
+
+  <style>
+    .animated-card {
+      position: absolute;
+      bottom: -50px;
+      left: 1%;
+      width: 300px;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: 'TANTangkiwood', serif;
+      font-size: 1rem;
+      text-align: center;
+      animation: fadeInUp 1s ease forwards, float 3s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, -5px);
+      }
+    }
+  </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
